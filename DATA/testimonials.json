@@ -1,0 +1,49 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "text": {
+        "en": "Artikaa transformed how I experience art collecting. Their curation and artist introductions have completely elevated my collection.",
+        "ru": "Artikaa изменила то, как я воспринимаю коллекционирование искусства.",
+        "hy": "Artikaa-ն փոխեց այն, թե ինչպես ապրում եմ արվեստի հավաքումը։"
+      },
+      "author": "David Chen",
+      "role": {
+        "en": "Art Collector & Investor",
+        "ru": "Коллекционер и инвестор",
+        "hy": "Արվեստի Հավաքորդ"
+      },
+      "avatar": "D"
+    },
+    {
+      "id": 2,
+      "text": {
+        "en": "As an emerging artist, finding the right gallery was crucial. Artikaa provided mentorship and visibility.",
+        "ru": "Как начинающему художнику, найти подходящую галерею было crucial.",
+        "hy": "Որպես սկսնակ նկարիչ՝ ճիշտ պատկերասրահ գտնելը կարևոր էր։"
+      },
+      "author": "Sofia Martinez",
+      "role": {
+        "en": "Contemporary Painter",
+        "ru": "Современная художница",
+        "hy": "Ժամանակակից Նկարչուհի"
+      },
+      "avatar": "S"
+    },
+    {
+      "id": 3,
+      "text": {
+        "en": "The corporate art program developed by Artikaa for our headquarters received unanimous praise.",
+        "ru": "Корпоративная арт-программа, разработанная Artikaa, получила единодушную похвалу.",
+        "hy": "Artikaa-ի մշակած կորպորատիվ արվեստի ծրագիրը ստացել է միաձայն գովասանք։"
+      },
+      "author": "James Wilson",
+      "role": {
+        "en": "CEO, Global Innovations Inc.",
+        "ru": "Генеральный директор",
+        "hy": "CEO"
+      },
+      "avatar": "J"
+    }
+  ]
+}

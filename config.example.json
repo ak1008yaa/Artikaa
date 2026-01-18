@@ -1,0 +1,71 @@
+{
+  "site": {
+    "name": "Artikaa Gallery",
+    "description": "Contemporary Art Gallery Platform",
+    "url": "https://artikaa.am",
+    "language": "hy",
+    "timezone": "Asia/Yerevan"
+  },
+  "api": {
+    "endpoint": "https://api.artikaa.am",
+    "version": "v1",
+    "timeout": 30000
+  },
+  "database": {
+    "host": "localhost",
+    "port": 3306,
+    "name": "artikaa_db",
+    "user": "artikaa_user",
+    "password": "your_secure_password_here"
+  },
+  "payment": {
+    "stripe": {
+      "public_key": "pk_live_your_stripe_public_key",
+      "secret_key": "sk_live_your_stripe_secret_key"
+    },
+    "paypal": {
+      "client_id": "your_paypal_client_id",
+      "secret": "your_paypal_secret"
+    },
+    "crypto": {
+      "enabled": true,
+      "api_key": "your_crypto_api_key"
+    }
+  },
+  "email": {
+    "service": "gmail",
+    "from": "noreply@artikaa.am",
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "smtp_user": "your_email@gmail.com",
+    "smtp_password": "your_app_password"
+  },
+  "security": {
+    "cors_origin": ["https://artikaa.am", "https://www.artikaa.am"],
+    "session_timeout": 3600,
+    "jwt_secret": "your_jwt_secret_key_here",
+    "encryption_key": "your_encryption_key_here"
+  },
+  "storage": {
+    "type": "local",
+    "path": "./uploads",
+    "max_file_size": 52428800,
+    "allowed_types": ["image/jpeg", "image/png", "image/webp", "image/gif"]
+  },
+  "analytics": {
+    "google_analytics_id": "GA-XXXXXXXXX-X",
+    "mixpanel_token": "your_mixpanel_token",
+    "enabled": true
+  },
+  "social": {
+    "facebook_app_id": "your_facebook_app_id",
+    "instagram_token": "your_instagram_token",
+    "twitter_api_key": "your_twitter_api_key"
+  },
+  "cache": {
+    "enabled": true,
+    "ttl": 3600,
+    "driver": "memory"
+  },
+  "environment": "development"
+}

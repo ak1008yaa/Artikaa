@@ -1,2171 +1,403 @@
 <!DOCTYPE html>
-<html lang="hy" id="htmlElement">
+<html lang="hy" dir="ltr" id="htmlElement">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>artikaa | Contemporary Art Gallery</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root {
-    /* رنگ‌بندی مشکی و طلایی */
-    --black: #000000;
-    --dark-black: #0a0a0a;
-    --charcoal: #121212;
-    --dark-gray: #1a1a1a;
-    --medium-gray: #2a2a2a;
-    --light-gray: #3a3a3a;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikaa | Ժամանակակից Արվեստի Պատկերասրահ եւ Առցանց Խանութ</title>
+    <meta name="description" content="Artikaa Ժամանակակից Արվեստի Պատկերասրահ - գնեք եւ վաճառեք ժամանակակից արվեստի գործեր Հայաստանում">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    --gold: #FFD700;
-    --gold-light: #FFE55C;
-    --gold-dark: #B8860B;
-    --gold-glow: rgba(255, 215, 0, 0.3);
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    --cream: #f8f8f2;
-    --off-white: #e6e6e6;
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     
-    /* جلوه‌های لیکوئید گلس */
-    --glass-bg: rgba(0, 0, 0, 0.25);
-    --glass-border: rgba(255, 215, 0, 0.15);
-    --glass-shadow: rgba(0, 0, 0, 0.2);
-    --glass-blur: blur(10px);
+    <!-- Styles -->
+    <link rel="stylesheet" href="ASSETS/css/main.css">
+    <link rel="stylesheet" href="ASSETS/css/gallery.css">
+    <link rel="stylesheet" href="ASSETS/css/cart.css">
     
-    /* جلوه‌های هایپر لینکوئید */
-    --liquid-gold: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
-    --liquid-gold-hover: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
-    
-    /* سایه‌های طلایی */
-    --gold-shadow: 0 4px 20px rgba(255, 215, 0, 0.2);
-    --gold-shadow-hover: 0 8px 30px rgba(255, 215, 0, 0.4);
-    --gold-shadow-light: 0 2px 10px rgba(255, 215, 0, 0.1);
-    
-    /* انیمیشن‌ها */
-    --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-medium: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-slow: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* سایز فونت‌ها */
-    --font-xs: 0.75rem;
-    --font-sm: 0.875rem;
-    --font-base: 1rem;
-    --font-lg: 1.125rem;
-    --font-xl: 1.25rem;
-    --font-2xl: 1.5rem;
-    --font-3xl: 1.875rem;
-    --font-4xl: 2.25rem;
-    --font-5xl: 3rem;
-    --font-6xl: 3.75rem;
-    --font-7xl: 4.5rem;
-}
-
-/* ریست استایل‌ها */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
-}
-
-body {
-    font-family: 'Raleway', sans-serif;
-    background-color: var(--black);
-    color: var(--cream);
-    line-height: 1.7;
-    font-weight: 400;
-    overflow-x: hidden;
-    min-height: 100vh;
-    position: relative;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(255, 215, 0, 0.04) 0%, transparent 50%);
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* تایپوگرافی */
-h1, h2, h3, h4, h5 {
-    font-family: 'Cinzel', serif;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.5px;
-    line-height: 1.2;
-}
-
-h1 {
-    font-size: clamp(var(--font-4xl), 5vw, var(--font-7xl));
-}
-
-h2 {
-    font-size: clamp(var(--font-3xl), 4vw, var(--font-5xl));
-}
-
-h3 {
-    font-size: clamp(var(--font-2xl), 3vw, var(--font-4xl));
-}
-
-h4 {
-    font-size: clamp(var(--font-xl), 2.5vw, var(--font-3xl));
-}
-
-p {
-    font-size: clamp(var(--font-base), 1vw, var(--font-lg));
-    margin-bottom: 1.5rem;
-    color: var(--off-white);
-}
-
-a {
-    color: var(--gold);
-    text-decoration: none;
-    transition: var(--transition-fast);
-}
-
-a:hover {
-    color: var(--gold-light);
-}
-
-/* کانتینر اصلی */
-.container {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
-
-@media (min-width: 1536px) {
-    .container {
-        max-width: 1400px;
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ArtGallery",
+        "name": "Artikaa Ժամանակակից Արվեստի Պատկերասրահ",
+        "url": "https://artikaa.am",
+        "logo": "https://artikaa.am/images/logo.png",
+        "description": "Contemporary art gallery and online store for Armenian artists and art collectors",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Հանրապետության Հրապարակ 25",
+            "addressLocality": "Երևան",
+            "addressCountry": "AM"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Sales",
+            "telephone": "+374-10-XXXXXX",
+            "email": "info@artikaa.am"
+        }
     }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 0 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 0.75rem;
-    }
-}
-
-/* لودر */
-.loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--black);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.loader.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.loader-content {
-    text-align: center;
-}
-
-.loader-spinner {
-    width: 80px;
-    height: 80px;
-    border: 3px solid rgba(255, 215, 0, 0.1);
-    border-radius: 50%;
-    border-top-color: var(--gold);
-    animation: spin 1s linear infinite;
-    margin: 0 auto 2rem;
-}
-
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* ناوبری */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border-bottom: 1px solid var(--glass-border);
-    transition: var(--transition-medium);
-    padding: 1rem 0;
-}
-
-.navbar.scrolled {
-    background: rgba(0, 0, 0, 0.9);
-    box-shadow: var(--gold-shadow-light);
-}
-
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-family: 'Cinzel', serif;
-    font-size: var(--font-2xl);
-    color: var(--gold);
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.logo-img {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--gold);
-    padding: 2px;
-}
-
-@media (max-width: 768px) {
-    .logo {
-        font-size: var(--font-xl);
-    }
-    
-    .logo-img {
-        height: 40px;
-        width: 40px;
-    }
-}
-
-.nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-    align-items: center;
-}
-
-.nav-links a {
-    color: var(--off-white);
-    font-weight: 500;
-    position: relative;
-    padding: 0.5rem 0;
-    font-size: var(--font-base);
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--gold);
-    transition: var(--transition-medium);
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-.nav-links a:hover {
-    color: var(--gold);
-}
-
-/* زبان‌ها */
-.language-switcher {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.language-btn {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    color: var(--off-white);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: var(--font-sm);
-    transition: var(--transition-fast);
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-}
-
-.language-btn:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-    transform: translateY(-2px);
-}
-
-.language-btn.active {
-    background: var(--gold);
-    color: var(--black);
-    border-color: var(--gold);
-}
-
-/* منوی موبایل */
-.mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--gold);
-    font-size: var(--font-2xl);
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001;
-}
-
-@media (max-width: 992px) {
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    .nav-links {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(10px);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        transition: var(--transition-medium);
-        z-index: 1000;
-    }
-    
-    .nav-links.active {
-        left: 0;
-    }
-    
-    .nav-links a {
-        font-size: var(--font-xl);
-    }
-    
-    .language-switcher {
-        margin-top: 2rem;
-    }
-}
-
-/* هیرو سکشن */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    padding: 6rem 0 4rem;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.8));
-    z-index: -1;
-}
-
-.hero-content {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-    padding: 2rem;
-}
-
-.art-canvas {
-    width: clamp(120px, 20vw, 200px);
-    height: clamp(120px, 20vw, 200px);
-    margin: 0 auto 3rem;
-    background: var(--liquid-gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--gold);
-    position: relative;
-    overflow: hidden;
-    animation: float 6s ease-in-out infinite;
-}
-
-.art-canvas::before {
-    content: '';
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    background: conic-gradient(
-        transparent,
-        var(--gold),
-        transparent,
-        var(--gold-dark),
-        transparent
-    );
-    animation: rotate 10s linear infinite;
-}
-
-.art-canvas i {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    color: var(--gold);
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.7);
-    width: 80%;
-    height: 80%;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.hero-content p {
-    font-size: clamp(var(--font-lg), 2vw, var(--font-2xl));
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 1.2rem 3rem;
-    background: transparent;
-    color: var(--gold);
-    border: 2px solid var(--gold);
-    border-radius: 50px;
-    font-size: var(--font-lg);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: var(--transition-medium);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.cta-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: var(--gold);
-    transition: var(--transition-medium);
-    z-index: -1;
-}
-
-.cta-button:hover::before {
-    width: 100%;
-}
-
-.cta-button:hover {
-    color: var(--black);
-    box-shadow: var(--gold-shadow-hover);
-}
-
-.scroll-down {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--gold);
-    font-size: var(--font-2xl);
-    animation: bounce 2s infinite;
-    cursor: pointer;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-    40% { transform: translateY(-15px) translateX(-50%); }
-    60% { transform: translateY(-7px) translateX(-50%); }
-}
-
-/* بخش‌های عمومی */
-section {
-    padding: clamp(4rem, 8vw, 8rem) 0;
-    position: relative;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: clamp(3rem, 6vw, 5rem);
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: var(--gold);
-    border-radius: 2px;
-}
-
-/* بخش درباره ما */
-.about {
-    background: var(--dark-black);
-    position: relative;
-    overflow: hidden;
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: clamp(2rem, 4vw, 4rem);
-    align-items: center;
-}
-
-.about-image {
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: var(--gold-shadow);
-    height: 500px;
-}
-
-.about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition-slow);
-}
-
-.about-image:hover img {
-    transform: scale(1.05);
-}
-
-.about-text {
-    padding: 1rem;
-}
-
-.about-text h3 {
-    margin-bottom: 1.5rem;
-}
-
-/* بخش آمار */
-.stats {
-    background: var(--charcoal);
-    position: relative;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
-}
-
-.stat-item {
-    text-align: center;
-    padding: 2rem 1rem;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: 15px;
-    transition: var(--transition-medium);
-}
-
-.stat-item:hover {
-    border-color: var(--gold);
-    transform: translateY(-10px);
-    box-shadow: var(--gold-shadow);
-}
-
-.stat-number {
-    font-size: clamp(var(--font-3xl), 4vw, var(--font-5xl));
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-    font-family: 'Cinzel', serif;
-}
-
-.stat-label {
-    color: var(--off-white);
-    font-size: var(--font-base);
-    font-weight: 500;
-}
-
-@media (max-width: 768px) {
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* گالری */
-.gallery {
-    background: var(--dark-black);
-}
-
-.gallery-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 3rem;
-}
-
-.filter-btn {
-    padding: 0.8rem 1.8rem;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    color: var(--off-white);
-    border-radius: 50px;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    font-size: var(--font-base);
-    font-weight: 500;
-}
-
-.filter-btn:hover, .filter-btn.active {
-    background: var(--gold);
-    color: var(--black);
-    border-color: var(--gold);
-    box-shadow: var(--gold-shadow-light);
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-@media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.gallery-item {
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    height: 400px;
-    cursor: pointer;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    transition: var(--transition-medium);
-}
-
-.gallery-item:hover {
-    border-color: var(--gold);
-    transform: translateY(-10px);
-    box-shadow: var(--gold-shadow-hover);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition-medium);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
-
-.gallery-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 2rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-    transform: translateY(100%);
-    transition: var(--transition-medium);
-}
-
-.gallery-item:hover .gallery-overlay {
-    transform: translateY(0);
-}
-
-.gallery-overlay h3 {
-    font-size: var(--font-xl);
-    margin-bottom: 0.5rem;
-}
-
-.gallery-tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-}
-
-.gallery-tag {
-    background: rgba(255, 215, 0, 0.1);
-    color: var(--gold);
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: var(--font-sm);
-}
-
-/* خدمات */
-.services {
-    background: var(--charcoal);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.5rem;
-}
-
-.service-card {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 2.5rem 2rem;
-    transition: var(--transition-medium);
-    position: relative;
-    overflow: hidden;
-}
-
-.service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--liquid-gold);
-    transition: var(--transition-medium);
-    z-index: -1;
-}
-
-.service-card:hover::before {
-    left: 0;
-}
-
-.service-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-10px);
-    box-shadow: var(--gold-shadow);
-}
-
-.service-icon {
-    font-size: var(--font-3xl);
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-}
-
-.service-card h3 {
-    margin-bottom: 1rem;
-}
-
-.service-features {
-    margin-top: 1.5rem;
-}
-
-.service-feature {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    margin-bottom: 0.7rem;
-    color: var(--off-white);
-}
-
-.service-feature i {
-    color: var(--gold);
-    font-size: var(--font-sm);
-}
-
-/* نظرات */
-.testimonials {
-    background: var(--dark-black);
-    overflow: hidden;
-}
-
-.testimonial-slider {
-    display: flex;
-    gap: 2rem;
-    padding: 2rem 0;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.testimonial-slider::-webkit-scrollbar {
-    display: none;
-}
-
-.testimonial-card {
-    flex: 0 0 calc(100% - 4rem);
-    scroll-snap-align: start;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 2.5rem;
-    transition: var(--transition-medium);
-}
-
-@media (min-width: 768px) {
-    .testimonial-card {
-        flex: 0 0 calc(50% - 2rem);
-    }
-}
-
-@media (min-width: 1024px) {
-    .testimonial-card {
-        flex: 0 0 calc(33.333% - 2rem);
-    }
-}
-
-.testimonial-card:hover {
-    border-color: var(--gold);
-    box-shadow: var(--gold-shadow);
-}
-
-.testimonial-card p {
-    font-style: italic;
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding: 0 1rem;
-}
-
-.testimonial-card p::before,
-.testimonial-card p::after {
-    content: '"';
-    font-size: var(--font-3xl);
-    color: var(--gold);
-    opacity: 0.5;
-    position: absolute;
-}
-
-.testimonial-card p::before {
-    top: -1rem;
-    left: 0;
-}
-
-.testimonial-card p::after {
-    bottom: -2rem;
-    right: 0;
-}
-
-.client-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.client-avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--liquid-gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: var(--font-xl);
-    color: var(--gold);
-    border: 2px solid var(--gold);
-}
-
-.client-details h4 {
-    color: var(--gold);
-    margin-bottom: 0.3rem;
-}
-
-.client-details p {
-    color: var(--off-white);
-    font-size: var(--font-sm);
-    margin: 0;
-}
-
-.testimonial-controls {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
-}
-
-.testimonial-control {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--glass-border);
-    cursor: pointer;
-    transition: var(--transition-fast);
-}
-
-.testimonial-control.active {
-    background: var(--gold);
-    transform: scale(1.2);
-}
-
-/* حمایت از هنرمندان */
-.support-artists {
-    background: var(--charcoal);
-}
-
-.support-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 4rem;
-    align-items: center;
-}
-
-@media (max-width: 768px) {
-    .support-content {
-        gap: 2rem;
-    }
-}
-
-.support-text h3 {
-    margin-bottom: 1.5rem;
-}
-
-.crypto-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.crypto-item {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: 15px;
-    padding: 1.5rem;
-    transition: var(--transition-fast);
-}
-
-.crypto-item:hover {
-    border-color: var(--gold);
-    box-shadow: var(--gold-shadow-light);
-}
-
-.crypto-item h4 {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.7rem;
-}
-
-.crypto-address {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 1rem;
-    border-radius: 8px;
-    font-family: 'Courier New', monospace;
-    font-size: var(--font-sm);
-    word-break: break-all;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    border: 1px solid transparent;
-}
-
-.crypto-address:hover {
-    border-color: var(--gold);
-}
-
-.crypto-address .copy-icon {
-    float: right;
-    color: var(--gold);
-    font-size: var(--font-lg);
-    margin-left: 1rem;
-}
-
-.whatsapp-section {
-    margin-top: 2rem;
-}
-
-.whatsapp-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.8rem;
-    background: #25D366;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: var(--transition-medium);
-    text-decoration: none;
-}
-
-.whatsapp-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-}
-
-.whatsapp-btn i {
-    font-size: 1.3rem;
-}
-
-.support-image {
-    background: var(--liquid-gold);
-    border-radius: 20px;
-    padding: 3rem 2rem;
-    text-align: center;
-    border: 1px solid var(--glass-border);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-
-.support-image i {
-    font-size: var(--font-5xl);
-    color: var(--gold);
-    animation: float 4s ease-in-out infinite;
-}
-
-.support-image p {
-    font-size: var(--font-xl);
-    font-style: italic;
-    font-family: 'Playfair Display', serif;
-}
-
-/* تماس با ما */
-.contact {
-    background: var(--dark-black);
-}
-
-.contact-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 4rem;
-}
-
-@media (max-width: 768px) {
-    .contact-container {
-        gap: 2rem;
-    }
-}
-
-.contact-info h3 {
-    margin-bottom: 1.5rem;
-}
-
-.contact-details {
-    margin-top: 2rem;
-}
-
-.contact-detail {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.contact-detail i {
-    color: var(--gold);
-    font-size: var(--font-xl);
-    width: 30px;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    color: var(--off-white);
-    text-decoration: none;
-    transition: var(--transition-medium);
-    font-size: var(--font-xl);
-}
-
-.social-link:hover {
-    background: var(--gold);
-    color: var(--black);
-    transform: translateY(-5px);
-    border-color: var(--gold);
-}
-
-.contact-form {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 3rem 2rem;
-    transition: var(--transition-medium);
-}
-
-.contact-form:hover {
-    border-color: var(--gold);
-    box-shadow: var(--gold-shadow);
-}
-
-@media (max-width: 480px) {
-    .contact-form {
-        padding: 2rem 1.5rem;
-    }
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--off-white);
-    font-weight: 500;
-}
-
-.form-control {
-    width: 100%;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--glass-border);
-    border-radius: 10px;
-    color: var(--cream);
-    font-family: 'Raleway', sans-serif;
-    font-size: var(--font-base);
-    transition: var(--transition-fast);
-}
-
-.form-control:focus {
-    outline: none;
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px var(--gold-glow);
-}
-
-textarea.form-control {
-    min-height: 150px;
-    resize: vertical;
-}
-
-/* فوتر */
-footer {
-    background: var(--black);
-    padding: 3rem 0 2rem;
-    border-top: 1px solid var(--glass-border);
-    position: relative;
-    text-align: center;
-}
-
-.back-to-top {
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--gold);
-    color: var(--black);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--font-xl);
-    cursor: pointer;
-    transition: var(--transition-medium);
-    border: 2px solid var(--gold);
-}
-
-.back-to-top:hover {
-    background: var(--black);
-    color: var(--gold);
-    transform: translateX(-50%) translateY(-5px);
-}
-
-footer p {
-    color: var(--off-white);
-    margin-bottom: 0;
-}
-
-/* انیمیشن‌های اسکرول */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* نوتیفیکیشن */
-.notification {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    padding: 1rem 1.5rem;
-    background: var(--gold);
-    color: var(--black);
-    border-radius: 10px;
-    font-weight: 600;
-    z-index: 1000;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    box-shadow: var(--gold-shadow);
-}
-
-.notification.show {
-    transform: translateX(0);
-}
-
-@media (max-width: 768px) {
-    .notification {
-        bottom: 1rem;
-        right: 1rem;
-        left: 1rem;
-        text-align: center;
-    }
-}
-
-/* حالت‌های خاص */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* رتینا دیسپلی */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
-}
-
-/* پرینت */
-@media print {
-    .navbar,
-    .mobile-menu-btn,
-    .scroll-down,
-    .back-to-top,
-    .notification {
-        display: none !important;
-    }
-    
-    body {
-        color: #000;
-        background: #fff;
-    }
-    
-    a {
-        color: #000;
-        text-decoration: underline;
-    }
-}
-
-/* دسترسی */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-/* فوکوس قابل مشاهده */
-:focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 2px;
-}
-</style>
+    </script>
 </head>
 <body>
-<!-- لودر -->
-<div class="loader">
-    <div class="loader-content">
-        <div class="loader-spinner"></div>
-        <p data-en="Loading gallery..." data-ru="Загрузка галереи..." data-hy="Պատկերասրահի բեռնում...">Պատկերասրահի բեռնում...</p>
-    </div>
-</div>
-
-<!-- نوتیفیکیشن -->
-<div class="notification" id="notification"></div>
-
-<!-- ناوبری -->
-<nav class="navbar">
-    <div class="container nav-container">
-        <a href="#" class="logo">
-            <img src="https://cdn.qwenlm.ai/output/agent/t2i/agent/04ac21618-656b-4d2b-97b9-adef07928f00.png" class="logo-img" alt="artikaa logo">
-            <span>artikaa</span>
-        </a>
-        
-        <ul class="nav-links">
-            <li><a href="#about" data-en="About" data-ru="О нас" data-hy="Մեր Մասին">Մեր Մասին</a></li>
-            <li><a href="#gallery" data-en="Gallery" data-ru="Галерея" data-hy="Պատկերասրահ">Պատկերասրահ</a></li>
-            <li><a href="#services" data-en="Services" data-ru="Услуги" data-hy="Ծառայություններ">Ծառայություններ</a></li>
-            <li><a href="#testimonials" data-en="Testimonials" data-ru="Отзывы" data-hy="Գնահատականներ">Գնահատականներ</a></li>
-            <li><a href="#support" data-en="Support" data-ru="Поддержка" data-hy="Աջակցել">Աջակցել</a></li>
-            <li><a href="#contact" data-en="Contact" data-ru="Контакты" data-hy="Կապ">Կապ</a></li>
-        </ul>
-        
-        <div class="language-switcher">
-            <button class="language-btn active" data-lang="hy" aria-label="Armenian">
-                <span>ՀԱՅ</span>
-            </button>
-            <button class="language-btn" data-lang="en" aria-label="English">
-                <span>ENG</span>
-            </button>
-            <button class="language-btn" data-lang="ru" aria-label="Russian">
-                <span>РУС</span>
-            </button>
-        </div>
-        
-        <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false">
-            <i class="fas fa-bars"></i>
-        </button>
-    </div>
-</nav>
-
-<!-- هیرو سکشن -->
-<section class="hero">
-    <div class="container">
-        <div class="hero-content animate-on-scroll">
-            <div class="art-canvas">
-                <i class="fas fa-palette"></i>
-            </div>
-            <h1 data-en="Where Art Finds Its Voice" data-ru="Где искусство находит свой голос" data-hy="Որտեղ Արվեստը Գտնում է Իր Ձայնը">Որտեղ Արվեստը Գտնում է Իր Ձայնը</h1>
-            <p data-en="A contemporary art gallery celebrating beauty, creativity and cultural heritage through the works of independent artists worldwide." data-ru="Современная художественная галерея, прославляющая красоту, творчество и культурное наследие в работах независимых художников со всего мира." data-hy="Ժամանակակից արվեստի պատկերասրահ, որն օժանդակում է գեղեցկությանը, ստեղծագործությանը և մշակութային ժառանգությանը ամբողջ աշխարհի անկախ նկարիչների աշխատանքների միջոցով։">Ժամանակակից արվեստի պատկերասրահ, որն օժանդակում է գեղեցկությանը, ստեղծագործությանը և մշակութային ժառանգությանը ամբողջ աշխարհի անկախ նկարիչների աշխատանքների միջոցով։</p>
-            <button class="cta-button" id="exploreBtn" data-en="Explore Collection" data-ru="Исследовать коллекцию" data-hy="Բացահայտել Հավաքածուն">Բացահայտել Հավաքածուն</button>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="loader-spinner"></div>
+            <p>Պատկերասրահը բեռնվում է...</p>
         </div>
     </div>
-    <div class="scroll-down" aria-label="Scroll down">
-        <i class="fas fa-chevron-down"></i>
-    </div>
-</section>
 
-<!-- درباره ما -->
-<section class="about" id="about">
-    <div class="container">
-        <h2 class="section-title animate-on-scroll" data-en="About Us" data-ru="О нас" data-hy="Մեր Մասին">Մեր Մասին</h2>
-        <div class="about-content">
-            <div class="about-image animate-on-scroll">
-                <img src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Art Gallery Interior" loading="lazy">
-            </div>
-            <div class="about-text animate-on-scroll">
-                <h3 data-en="Contemporary Art Space" data-ru="Пространство современного искусства" data-hy="Ժամանակակից Արվեստի Տարածք">Ժամանակակից Արվեստի Տարածք</h3>
-                <p data-en="Founded in 2015, Artikaa has established itself as a premier platform connecting independent artists with art enthusiasts and collectors worldwide. We bridge the gap between creative expression and global appreciation." data-ru="Основанная в 2015 году, Artikaa зарекомендовала себя как ведущая платформа, соединяющая независимых художников с любителями искусства и коллекционерами по всему миру. Мы устраняем разрыв между творческим выражением и глобальным признанием." data-hy="Հիմնադրվել է 2015 թվականին՝ Artikaa-ն հաստատել է իրեն որպես առաջատար հարթակ, որը կապում է անկախ նկարիչներին արվեստի սիրահարների և հավաքորդների հետ ամբողջ աշխարհում։ Մենք կարևոր դեր ենք խաղում ստեղծագործական արտահայտության և գլոբալ գնահատման միջև։">Հիմնադրվել է 2015 թվականին՝ Artikaa-ն հաստատել է իրեն որպես առաջատար հարթակ, որը կապում է անկախ նկարիչներին արվեստի սիրահարների և հավաքորդների հետ ամբողջ աշխարհում։ Մենք կարևոր դեր ենք խաղում ստեղծագործական արտահայտության և գլոբալ գնահատման միջև։</p>
-                <p data-en="Our mission is to empower artists by providing a secure platform, fair commission rates, and comprehensive marketing support. We believe in removing barriers between creators and their audience." data-ru="Наша миссия - расширить возможности художников, предоставив безопасную платформу, справедливые комиссионные ставки и всестороннюю маркетинговую поддержку. Мы верим в устранение барьеров между создателями и их аудиторией." data-hy="Մեր նպատակն է հզորացնել նկարիչներին՝ ապահովելով անվտանգ հարթակ, արդար միջնորդավճարներ և համապարփակ մարքեթինգային աջակցություն։ Մենք հավատում ենք ստեղծողների և նրանց լսարանի միջև արգելքների վերացմանը։">Մեր նպատակն է հզորացնել նկարիչներին՝ ապահովելով անվտանգ հարթակ, արդար միջնորդավճարներ և համապարփակ մարքեթինգային աջակցություն։ Մենք հավատում ենք ստեղծողների և նրանց լսարանի միջև արգելքների վերացմանը։</p>
-                <p data-en="Whether you're an emerging painter, established sculptor, experimental photographer, or digital artist, Artikaa provides the global stage your work deserves." data-ru="Будь вы начинающим художником, опытным скульптором, экспериментальным фотографом или цифровым художником, Artikaa предоставляет глобальную сцену, которую заслуживает ваша работа." data-hy="Անկախ նրանից՝ դուք սկսնակ նկարիչ եք, փորձառու քանդակագործ, փորձարարական ֆոտոգրաֆ կամ թվային նկարիչ, Artikaa-ն ապահովում է համաշխարհային բեմ, որին արժանի է ձեր աշխատանքը։">Անկախ նրանից՝ դուք սկսնակ նկարիչ եք, փորձառու քանդակագործ, փորձարարական ֆոտոգրաֆ կամ թվային նկարիչ, Artikaa-ն ապահովում է համաշխարհային բեմ, որին արժանի է ձեր աշխատանքը։</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- آمار -->
-<section class="stats">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item animate-on-scroll">
-                <div class="stat-number" data-target="150">0</div>
-                <div class="stat-label" data-en="Artists" data-ru="Художники" data-hy="Նկարիչներ">Նկարիչներ</div>
-            </div>
-            <div class="stat-item animate-on-scroll">
-                <div class="stat-number" data-target="420">0</div>
-                <div class="stat-label" data-en="Artworks" data-ru="Работы" data-hy="Աշխատանքներ">Աշխատանքներ</div>
-            </div>
-            <div class="stat-item animate-on-scroll">
-                <div class="stat-number" data-target="9">0</div>
-                <div class="stat-label" data-en="Years" data-ru="Лет" data-hy="Տարիներ">Տարիներ</div>
-            </div>
-            <div class="stat-item animate-on-scroll">
-                <div class="stat-number" data-target="68">0</div>
-                <div class="stat-label" data-en="Exhibitions" data-ru="Выставки" data-hy="Ցուցահանդեսներ">Ցուցահանդեսներ</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- گالری -->
-<section class="gallery" id="gallery">
-    <div class="container">
-        <h2 class="section-title animate-on-scroll" data-en="Featured Artworks" data-ru="Избранные работы" data-hy="Ընտրյալ Աշխատանքներ">Ընտրյալ Աշխատանքներ</h2>
-        
-        <div class="gallery-filters animate-on-scroll">
-            <button class="filter-btn active" data-filter="all" data-en="All" data-ru="Все" data-hy="Բոլորը">Բոլորը</button>
-            <button class="filter-btn" data-filter="painting" data-en="Paintings" data-ru="Живопись" data-hy="Նկարներ">Նկարներ</button>
-            <button class="filter-btn" data-filter="sculpture" data-en="Sculptures" data-ru="Скульптуры" data-hy="Քանդակներ">Քանդակներ</button>
-            <button class="filter-btn" data-filter="photography" data-en="Photography" data-ru="Фотография" data-hy="Ֆոտոգրաֆիա">Ֆոտոգրաֆիա</button>
-            <button class="filter-btn" data-filter="digital" data-en="Digital" data-ru="Цифровое" data-hy="Թվային">Թվային</button>
-        </div>
-        
-        <div class="gallery-grid" id="galleryGrid">
-            <!-- گالری آیتم‌ها به صورت داینامیک لود می‌شوند -->
-        </div>
-    </div>
-</section>
-
-<!-- خدمات -->
-<section class="services" id="services">
-    <div class="container">
-        <h2 class="section-title animate-on-scroll" data-en="Our Services" data-ru="Наши услуги" data-hy="Մեր Ծառայությունները">Մեր Ծառայությունները</h2>
-        
-        <div class="services-grid">
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <i class="fas fa-gem"></i>
-                </div>
-                <h3 data-en="Art Consultation" data-ru="Арт-консалтинг" data-hy="Արվեստի Խորհրդատվություն">Արվեստի Խորհրդատվություն</h3>
-                <p data-en="Personalized guidance for selecting artworks that complement your space, style, and budget with our expert art consultants." data-ru="Персональное руководство по выбору произведений искусства, дополняющих ваше пространство, стиль и бюджет, с нашими экспертами-консультантами." data-hy="Անհատականացված ղեկավարություն արվեստի գործեր ընտրելու համար, որոնք լրացնում են ձեր տարածքը, ոճը և բյուջեն մեր փորձագետ խորհրդատուների հետ։">Անհատականացված ղեկավարություն արվեստի գործեր ընտրելու համար, որոնք լրացնում են ձեր տարածքը, ոճը և բյուջեն մեր փորձագետ խորհրդատուների հետ։</p>
-                <div class="service-features">
-                    <div class="service-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span data-en="Space Analysis" data-ru="Анализ пространства" data-hy="Տարածքի Վերլուծություն">Տարածքի Վերլուծություն</span>
-                    </div>
-                    <div class="service-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span data-en="Collection Planning" data-ru="Планирование коллекции" data-hy="Հավաքածուի Պլանավորում">Հավաքածուի Պլանավորում</span>
-                    </div>
-                    <div class="service-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span data-en="Investment Advice" data-ru="Инвестиционные консультации" data-hy="Ներդրումային Խորհրդատվություն">Ներդրումային Խորհրդատվություն</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">A</div>
+                <span>ARTIKAA</span>
+            </a>
             
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <i class="fas fa-crown"></i>
-                </div>
-                <h3 data-en="Exhibition Curation" data-ru="Курирование выставок" data-hy="Ցուցահանդեսների Կազմակերպում">Ցուցահանդեսների Կազմակերպում</h3>
-                <p data-en="End-to-end exhibition services from concept development and artist selection to installation and promotion." data-ru="Полный спектр услуг по организации выставок от разработки концепции и отбора художников до установки и продвижения." data-hy="Ամբողջական ցուցահանդեսային ծառայություններ՝ սկսած հայեցակարգի մշակումից և նկարիչների ընտրությունից մինչև տեղադրում և առաջխաղացում։">Ամբողջական ցուցահանդեսային ծառայություններ՝ սկսած հայեցակարգի մշակումից և նկարիչների ընտրությունից մինչև տեղադրում և առաջխաղացում։</p>
-                <div class="service-features">
-                    <div class="service-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span data-en="Venue Selection" data-ru="Выбор площадки" data-hy="Վայրի Ընտրություն">Վայրի Ընտրություն</span>
-                    </div>
-                    <div class="service-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span data-en="Artwork Logistics" data-ru="Логистика работ" data-hy="Աշխատանքների Լոգիստիկա">Աշխատանքների Լոգիստիկա</span>
-                    </div>
-                    <div class="service-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span data-en="Marketing Campaigns" data-ru="Маркетинговые кампании" data-hy="Մարքեթինգային Առաջխաղացում">Մարքեթինگային Առաջխաղացում</span>
-                    </div>
-                </div>
-            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Գլխավոր</a></li>
+                <li><a href="#gallery" class="nav-link">Պատկերասրահ</a></li>
+                <li><a href="#artists" class="nav-link">Նկարիչներ</a></li>
+                <li><a href="#services" class="nav-link">Ծառայություններ</a></li>
+                <li><a href="#contact" class="nav-link">Կապ</a></li>
+            </ul>
             
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon">
-                    <i class="fas fa-award"></i>
-                </div>
-                <h3 data-en="Artist Development" data-ru="Развитие художников" data-hy="Նկարիչների Զարգացում">Նկարիչների Զարգացում</h3>
-                <p data-en="Comprehensive support programs for artists including portfolio development, career guidance, and international exposure." data-ru="Комплексные программы поддержки художников, включая развитие портфолио, карьерные консультации и международное признание." data-hy="Ամբողջական աջակցության ծրագրեր նկարիչների համար, ներառյալ պորտֆոլիոյի զարգացում, կարիերայի ուղղորդում և միջազգային ճանաչում։">Ամբողջական աջակցության ծրագրեր նկարիչների համար, ներառյալ պորտֆոլիոյի զարգացում, կարիերայի ուղղորդում և միջազգային ճանաչում։</p>
-                <div class="service-features">
-                    <div class="service-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span data-en="Portfolio Review" data-ru="Обзор портфолио" data-hy="Պորտֆոլիոյի Վերանայում">Պորտֆոլիոյի Վերանայում</span>
-                    </div>
-                    <div class="service-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span data-en="Career Strategy" data-ru="Карьерная стратегия" data-hy="Կարիերայի Ռազմավարություն">Կարիերայի Ռազմավարություն</span>
-                    </div>
-                    <div class="service-feature">
-                        <i class="fas fa-check-circle"></i>
-                        <span data-en="Global Networking" data-ru="Глобальные связи" data-hy="Գլոբալ Ցանցավորում">Գլոբալ Ցանցավորում</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- نظرات -->
-<section class="testimonials" id="testimonials">
-    <div class="container">
-        <h2 class="section-title animate-on-scroll" data-en="Client Stories" data-ru="Истории клиентов" data-hy="Հաճախորդների Պատմություններ">Հաճախորդների Պատմություններ</h2>
-        
-        <div class="testimonial-slider" id="testimonialSlider">
-            <!-- نظرات به صورت داینامیک لود می‌شوند -->
-        </div>
-        
-        <div class="testimonial-controls" id="testimonialControls">
-            <div class="testimonial-control active"></div>
-            <div class="testimonial-control"></div>
-            <div class="testimonial-control"></div>
-        </div>
-    </div>
-</section>
-
-<!-- حمایت از هنرمندان -->
-<section class="support-artists" id="support">
-    <div class="container">
-        <h2 class="section-title animate-on-scroll" data-en="Support Artists" data-ru="Поддержка художников" data-hy="Աջակցել Նկարիչներին">Աջակցել Նկարիչներին</h2>
-        
-        <div class="support-content">
-            <div class="support-text animate-on-scroll">
-                <h3 data-en="Direct Artist Support" data-ru="Прямая поддержка художников" data-hy="Ուղղակի Աջակցություն Նկարիչներին">Ուղղակի Աջակցություն Նկարիչներին</h3>
-                <p data-en="Your direct support through cryptocurrency enables artists to focus on their craft, explore new creative directions, and produce remarkable works that inspire and challenge." data-ru="Ваша прямая поддержка через криптовалюту позволяет художникам сосредоточиться на своем ремесле, исследовать новые творческие направления и создавать замечательные работы, которые вдохновляют и бросают вызов." data-hy="Ձեր ուղղակի աջակցությունը կրիպտոարժույթի միջոցով հնարավորություն է տալիս նկարիչներին կենտրոնանալ իրենց արհեստի վրա, ուսումնասիրել նոր ստեղծագործական ուղղություններ և ստեղծել ուշագրավ աշխատանքներ, որոնք ոգեշնչում և մարտահրավեր են նետում։">Ձեր ուղղակի աջակցությունը կրիպտոարժույթի միջոցով հնարավորություն է տալիս նկարիչներին կենտրոնանալ իրենց արհեստի վրա, ուսումնասիրել նոր ստեղծագործական ուղղություններ և ստեղծել ուշագրավ աշխատանքներ, որոնք ոգեշնչում և մարտահրավեր են նետում։</p>
-                
-                <div class="crypto-methods">
-                    <div class="crypto-item">
-                        <h4><i class="fab fa-bitcoin"></i> <span data-en="Bitcoin (BTC)" data-ru="Bitcoin (BTC)" data-hy="Bitcoin (BTC)">Bitcoin (BTC)</span></h4>
-                        <div class="crypto-address" data-address="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh">
-                            <span>bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</span>
-                            <i class="fas fa-copy copy-icon" title="Copy address"></i>
-                        </div>
-                        <small>Bitcoin Network</small>
-                    </div>
-                    
-                    <div class="crypto-item">
-                        <h4><i class="fab fa-ethereum"></i> <span data-en="Ethereum (ETH)" data-ru="Ethereum (ETH)" data-hy="Ethereum (ETH)">Ethereum (ETH)</span></h4>
-                        <div class="crypto-address" data-address="0x71C7656EC7ab88b098defB751B7401B5f6d8976F">
-                            <span>0x71C7656EC7ab88b098defB751B7401B5f6d8976F</span>
-                            <i class="fas fa-copy copy-icon" title="Copy address"></i>
-                        </div>
-                        <small>Ethereum Network (ERC-20)</small>
-                    </div>
+            <div class="nav-right">
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="hy" title="Հայերեն">ՀԱՅ</button>
+                    <button class="lang-btn" data-lang="en" title="English">ENG</button>
+                    <button class="lang-btn" data-lang="ru" title="Русский">РУС</button>
                 </div>
                 
-                <div class="whatsapp-section">
-                    <p data-en="After making a contribution, contact us via WhatsApp to receive a digital certificate of support and updates on the artists you're helping." data-ru="После внесения вклада свяжитесь с нами через WhatsApp, чтобы получить цифровой сертификат поддержки и обновления о художниках, которым вы помогаете." data-hy="Ներդրում կատարելուց հետո կապ հաստատեք մեզ հետ WhatsApp-ի միջոցով՝ աջակցության թվային վկայական և օգնած նկարիչների մասին թարմացումներ ստանալու համար։">Ներդրում կատարելուց հետո կապ հաստատեք մեզ հետ WhatsApp-ի միջոցով՝ աջակցության թվային վկայական և օգնած նկարիչների մասին թարմացումներ ստանալու համար։</p>
-                    <a href="https://wa.me/37412345678?text=Hello%20Artikaa!%20I%20would%20like%20to%20support%20your%20artists." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-whatsapp"></i>
-                        <span data-en="Contact via WhatsApp" data-ru="Связаться через WhatsApp" data-hy="Կապ via WhatsApp">Կապ via WhatsApp</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="support-image animate-on-scroll">
-                <i class="fas fa-hands-helping"></i>
-                <p data-en="Every contribution directly fuels artistic innovation and cultural preservation" data-ru="Каждый вклад непосредственно питает художественные инновации и сохранение культуры" data-hy="Յուրաքանչյուր ներդրում ուղղակիորեն սնուցում է արվեստի նորարարությունն ու մշակույթի պահպանումը">Յուրաքանչյուր ներդրում ուղղակիորեն սնուցում է արվեստի նորարարությունն ու մշակույթի պահպանումը</p>
+                <button class="nav-cart" id="navCart" title="Զամբյուղ">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+
+                <button class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
-    </div>
-</section>
+    </nav>
 
-<!-- تماس با ما -->
-<section class="contact" id="contact">
-    <div class="container">
-        <h2 class="section-title animate-on-scroll" data-en="Get In Touch" data-ru="Связаться" data-hy="Կապ Հաստատել">Կապ Հաստատել</h2>
-        
-        <div class="contact-container">
-            <div class="contact-info animate-on-scroll">
-                <h3 data-en="Visit Our Gallery" data-ru="Посетите нашу галерею" data-hy="Այցելեք Մեր Պատկերասրահ">Այցելեք Մեր Պատկերասրահ</h3>
-                <p data-en="Located in the heart of Yerevan's cultural district, our gallery is open to visitors and artists alike. We also offer virtual consultations for international clients." data-ru="Расположенная в самом сердце культурного района Еревана, наша галерея открыта как для посетителей, так и для художников. Мы также предлагаем виртуальные консультации для международных клиентов." data-hy="Գտնվելով Երևանի մշակութային թաղամասի սրտում՝ մեր պատկերասրահը բաց է այցելուների և նկարիչների համար։ Մենք նաև առաջարկում ենք վիրտուալ խորհրդատվություն միջազգային հաճախորդների համար։">Գտնվելով Երևանի մշակութային թաղամասի սրտում՝ մեր պատկերասրահը բաց է այցելուների և նկարիչների համար։ Մենք նաև առաջարկում ենք վիրտուալ խորհրդատվություն միջազգային հաճախորդների համար։</p>
-                
-                <div class="contact-details">
-                    <div class="contact-detail">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Որտեղ Արվեստը<br>Գտնում է Իր Ձայնը</h1>
+            <p class="hero-subtitle">Բացահայտեք ժամանակակից արվեստի եզակի հավաքածուներ</p>
+            <a href="#gallery" class="btn btn-primary">
+                <span>Բացահայտել Պատկերասրահը</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Արվեստի Գործեր</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">45+</div>
+                    <div class="stat-label">Նկարիչներ</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-label">Գոհ Հաճախորդներ</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.8★</div>
+                    <div class="stat-label">Գնահատական</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Արվեստի Գործեր</h2>
+                <p class="section-subtitle">Բացահայտեք մեր ժամանակակից կողմերի մեծ հավաքածուն</p>
+            </div>
+
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Բոլորը</button>
+                <button class="filter-btn" data-filter="painting">Նկարներ</button>
+                <button class="filter-btn" data-filter="sculpture">Քանդակներ</button>
+                <button class="filter-btn" data-filter="photography">Լուսանկարներ</button>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Products loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/about.jpg" alt="About Artikaa Gallery">
+                </div>
+                <div class="about-content">
+                    <h2>Մեր Մասին</h2>
+                    <p>Artikaa-ն ստեղծվել է 2020 թվականին` հայ նկարիչներին համաշխարհային հանրությանը ներկայացնելու նպատակով։ Մենք հավատում ենք, որ արվեստը սահմանազերծ է և յուրաքանչյուր մեկը պետք է հասանելի լինի արվեստի գմբիրների համար:</p>
+                    <p>Մեր հավաքածուն ներառում է ժամանակակից նկարներ, քանդակներ, լուսանկարներ և թվային արվեստ՝ Հայաստանի ամենա talented նկարիչներից:</p>
+                    <a href="#" class="btn btn-secondary">Ավելին իմանալ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artists Section -->
+    <section class="section artists" id="artists">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Հայտնի Նկարիչներ</h2>
+                <p class="section-subtitle">Հանդիպեք մեր տաղանդավոր նկարիչներին</p>
+            </div>
+
+            <div class="artists-grid" id="artistsGrid">
+                <!-- Artists loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Մեր Ծառայություններ</h2>
+                <p class="section-subtitle">Մենք առաջարկում ենք լավագույն ծառայություններ</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Արագ Առաքում</h3>
+                    <p>Ապահովել ենք ամբողջ Հայաստանում արագ և վստահելի առաքում</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Ապահով Վճարում</h3>
+                    <p>Բոլոր վճարումները փակ հարթակի միջոցով իրականացվում են</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Աջակցություն</h3>
+                    <p>Մեր թիմը պատրաստ է օգնել ձեզ 24 ժամ շարունակ</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>Հեռուստադի Վերադարձ</h3>
+                    <p>30 օր վերադարձի գինամատենք բանի կամ փոխանակ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Հաճախորդների Մեկնաբանություններ</h2>
+            </div>
+
+            <div class="testimonials-grid" id="testimonialsGrid">
+                <!-- Testimonials loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Մեզ հետ Կապվեք</h2>
+                <p class="section-subtitle">Մենք սիրում ենք լսել ձեր կարծիքը</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span data-en="25 Republic Square, Yerevan 0010, Armenia" data-ru="Площадь Республики 25, Ереван 0010, Армения" data-hy="Հանրապետության Հրապարակ 25, Երևան 0010, Հայաստան">Հանրապետության Հրապարակ 25, Երևան 0010, Հայաստան</span>
+                        <div>
+                            <h4>Հասցե</h4>
+                            <p>Հանրապետության Հրապարակ 25<br>Երևան, Հայաստան</p>
+                        </div>
                     </div>
-                    <div class="contact-detail">
-                        <i class="fas fa-clock"></i>
-                        <span data-en="Tue-Sat: 11:00-19:00, Sun: 12:00-17:00" data-ru="Вт-Сб: 11:00-19:00, Вс: 12:00-17:00" data-hy="Երեք-Շաբ: 11:00-19:00, Կիր: 12:00-17:00">Երեք-Շաբ: 11:00-19:00, Կիր: 12:00-17:00</span>
-                    </div>
-                    <div class="contact-detail">
-                        <i class="fas fa-envelope"></i>
-                        <span>contact@artikaa.am</span>
-                    </div>
-                    <div class="contact-detail">
+                    <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>+374 (10) 55-55-55</span>
+                        <div>
+                            <h4>Հեռախոս</h4>
+                            <p>+374 (10) XXX-XXXX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Էլ. Հասցե</h4>
+                            <p>info@artikaa.am</p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Pinterest">
-                        <i class="fab fa-pinterest-p"></i>
-                    </a>
-                    <a href="#" class="social-link" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Ձեր Անունը" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Ձեր Էլ. Հասցե" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Թեմա" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" placeholder="Ձեր Հաղորդագրությունը" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ուղարկել</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Բաժանորդ Դառեք Մեր Տեղեկատուին</h2>
+                <p>Ստացեք բացառիկ առաջարկներ և նորանցներ սկսած ձեր հաշվից</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Ձեր Էլ. Հասցե" required>
+                    <button type="submit" class="btn btn-primary">Բաժանորդ</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Մեր Մասին</h3>
+                    <ul>
+                        <li><a href="#">Մեր Պատմությունը</a></li>
+                        <li><a href="#">Մեր Թիմը</a></li>
+                        <li><a href="#">Կարիերա</a></li>
+                        <li><a href="#">Բլոգ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Ծառայություններ</h3>
+                    <ul>
+                        <li><a href="#">Բիզնես Հաշիվ</a></li>
+                        <li><a href="#">Քարտուղ Ծառայություններ</a></li>
+                        <li><a href="#">Գինը Գնահատում</a></li>
+                        <li><a href="#">Նույնություն</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Իրավական</h3>
+                    <ul>
+                        <li><a href="#">Գաղտնիության Քաղաքականություն</a></li>
+                        <li><a href="#">Ծառայության Պայմաններ</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">Մեր Ծառայություններ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Հետևեք Մեզ</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
                 </div>
             </div>
-            
-            <form class="contact-form animate-on-scroll" id="contactForm">
-                <div class="form-group">
-                    <label for="name" data-en="Full Name" data-ru="Полное имя" data-hy="Ամբողջական Անուն">Ամբողջական Անուն</label>
-                    <input type="text" id="name" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email" data-en="Email Address" data-ru="Электронная почта" data-hy="Էլ. Փոստի Հասցե">Էլ. Փոստի Հասցե</label>
-                    <input type="email" id="email" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="subject" data-en="Subject" data-ru="Тема" data-hy="Թեմա">Թեմա</label>
-                    <select id="subject" class="form-control">
-                        <option value="" data-en="Select a subject" data-ru="Выберите тему" data-hy="Ընտրեք թեմա">Ընտրեք թեմա</option>
-                        <option value="consultation" data-en="Art Consultation" data-ru="Арт-консультация" data-hy="Արվեստի Խորհրդատվություն">Արվեստի Խորհրդատվություն</option>
-                        <option value="exhibition" data-en="Exhibition Inquiry" data-ru="Запрос о выставке" data-hy="Ցուցահանդեսի Հարցում">Ցուցահանդեսի Հարցում</option>
-                        <option value="artist" data-en="Artist Submission" data-ru="Представление художника" data-hy="Նկարիչի Ներկայացում">Նկարիչի Ներկայացում</option>
-                        <option value="support" data-en="Artist Support" data-ru="Поддержка художников" data-hy="Նկարիչների Աջակցություն">Նկարիչների Աջակցություն</option>
-                        <option value="other" data-en="Other" data-ru="Другое" data-hy="Այլ">Այլ</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message" data-en="Your Message" data-ru="Ваше сообщение" data-hy="Ձեր Հաղորդագրությունը">Ձեր Հաղորդագրությունը</label>
-                    <textarea id="message" class="form-control" rows="5" required></textarea>
-                </div>
-                
-                <button type="submit" class="cta-button" data-en="Send Message" data-ru="Отправить сообщение" data-hy="Ուղարկել Հաղորդագրություն">Ուղարկել Հաղորդագրություն</button>
-            </form>
-        </div>
-    </div>
-</section>
 
-<!-- فوتر -->
-<footer>
-    <div class="container">
-        <div class="back-to-top" id="backToTop" aria-label="Back to top">
-            <i class="fas fa-arrow-up"></i>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Artikaa Gallery. Բոլոր իրավունքները պաշտպանված են:</p>
+                <div class="footer-meta">
+                    <a href="#">Վերադար</a>
+                    <a href="#">Կոնֆիդենցիալություն</a>
+                    <a href="#">Մեր Մասին</a>
+                </div>
+            </div>
         </div>
-        <p data-en="© 2026 Artikaa Contemporary Art Gallery. All rights reserved. | Yerevan, Armenia" data-ru="© 2026 Artikaa Contemporary Art Gallery. Все права защищены. | Ереван, Армения" data-hy="© 2026 Artikaa Ժամանակակից Արվեստի Պատկերասրահ: Բոլոր իրավունքները պաշտպանված են: | Երևան, Հայաստան">© 2026 Artikaa Ժամանակակից Արվեստի Պատկերասրահ: Բոլոր իրավունքները պաշտպանված են: | Երևան, Հայաստան</p>
-    </div>
-</footer>
+    </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // متغیرهای گلوبال
-    let currentLanguage = localStorage.getItem('selectedLanguage') || 'hy';
-    let currentTestimonial = 0;
-    let testimonialInterval;
-    
-    // لودر
-    setTimeout(() => {
-        document.querySelector('.loader').classList.add('hidden');
-    }, 1500);
-    
-    // منوی موبایل
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-        const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-        mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
-        navLinks.classList.toggle('active');
-        mobileMenuBtn.innerHTML = isExpanded ? 
-            '<i class="fas fa-bars"></i>' : 
-            '<i class="fas fa-times"></i>';
-    });
-    
-    // بستن منو با کلیک روی لینک
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        });
-    });
-    
-    // افکت نوار ناوبری در اسکرول
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-    
-    // اسکرول نرم
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // دکمه اسکرول پایین
-    document.querySelector('.scroll-down').addEventListener('click', () => {
-        window.scrollTo({
-            top: document.querySelector('#about').offsetTop - 80,
-            behavior: 'smooth'
-        });
-    });
-    
-    // دکمه بازگشت به بالا
-    const backToTopBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            backToTopBtn.style.opacity = '1';
-            backToTopBtn.style.visibility = 'visible';
-        } else {
-            backToTopBtn.style.opacity = '0';
-            backToTopBtn.style.visibility = 'hidden';
-        }
-    });
-    
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    // دکمه اکسپلور
-    document.getElementById('exploreBtn').addEventListener('click', () => {
-        window.scrollTo({
-            top: document.querySelector('#gallery').offsetTop - 80,
-            behavior: 'smooth'
-        });
-    });
-    
-    // داده‌های گالری
-    const galleryData = [
-        {
-            id: 1,
-            image: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-            category: "painting",
-            title: { en: "Golden Horizon", ru: "Золотой горизонт", hy: "Ոսկե Հորիզոն" },
-            description: { en: "Oil on canvas, 2023 | Abstract landscape exploring light and texture", ru: "Масло на холсте, 2023 | Абстрактный пейзаж, исследующий свет и текстуру", hy: "Յուղաներկ կտավի վրա, 2023 | Աբստրակտ բնապատկեր՝ ուսումնասիրելով լույսը և հյուսվածքը" },
-            tags: ["abstract", "landscape", "oil"]
-        },
-        {
-            id: 2,
-            image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-            category: "sculpture",
-            title: { en: "Eternal Flow", ru: "Вечный поток", hy: "Հավերժական Հոսք" },
-            description: { en: "Bronze sculpture, 2022 | Dynamic form inspired by natural movements", ru: "Бронзовая скульптура, 2022 | Динамичная форма, вдохновленная природными движениями", hy: "Բրոնզե քանդակ, 2022 | Դինամիկ ձև՝ ոգեշնչված բնական շարժումներով" },
-            tags: ["sculpture", "bronze", "abstract"]
-        },
-        {
-            id: 3,
-            image: "https://images.unsplash.com/photo-1543857778-c4a1a569e388?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-            category: "photography",
-            title: { en: "Urban Reflections", ru: "Городские отражения", hy: "Քաղաքային Արտացոլումներ" },
-            description: { en: "Digital photography, 2023 | Series exploring architecture and identity", ru: "Цифровая фотография, 2023 | Серия, исследующая архитектуру и идентичность", hy: "Թվային ֆոտոգրաֆիա, 2023 | Սերիա՝ ուսումնասիրելով ճարտարապետությունն ու ինքնությունը" },
-            tags: ["photography", "urban", "modern"]
-        },
-        {
-            id: 4,
-            image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-            category: "digital",
-            title: { en: "Digital Dreams", ru: "Цифровые мечты", hy: "Թվային Երազանքներ" },
-            description: { en: "Digital art, 2023 | AI-assisted composition exploring consciousness", ru: "Цифровое искусство, 2023 | Композиция с помощью ИИ, исследующая сознание", hy: "Թվային արվեստ, 2023 | AI-օգնությամբ կոմպոզիցիա՝ ուսումնասիրելով գիտակցությունը" },
-            tags: ["digital", "ai", "abstract"]
-        },
-        {
-            id: 5,
-            image: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-            category: "painting",
-            title: { en: "Mystic Portal", ru: "Мистический портал", hy: "Միստիկ Պորտալ" },
-            description: { en: "Acrylic on wood, 2022 | Mixed media exploration of spiritual dimensions", ru: "Акрил по дереву, 2022 | Исследование духовных измерений в смешанной технике", hy: "Ակրիլիկ փայտի վրա, 2022 | Խառը տեխնիկայով ուսումնասիրություն հոգևոր հարթությունների" },
-            tags: ["painting", "acrylic", "spiritual"]
-        },
-        {
-            id: 6,
-            image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-            category: "sculpture",
-            title: { en: "Form & Void", ru: "Форма и пустота", hy: "Ձև և Դատարկություն" },
-            description: { en: "Marble sculpture, 2021 | Study of negative space and classical form", ru: "Мраморная скульптура, 2021 | Исследование негативного пространства и классической формы", hy: "Մարմար քանդակ, 2021 | Բացասական տարածության և դասական ձևի ուսումնասիրություն" },
-            tags: ["sculpture", "marble", "classical"]
-        }
-    ];
-    
-    // داده‌های نظرات
-    const testimonialsData = [
-        {
-            text: { en: "Artikaa transformed how I experience art collecting. Their curation and artist introductions have completely elevated my collection and understanding of contemporary art.", ru: "Artikaa изменила то, как я воспринимаю коллекционирование искусства. Их кураторская работа и знакомство с художниками полностью подняли мою коллекцию и понимание современного искусства.", hy: "Artikaa-ն փոխեց այն, թե ինչպես եմ ես ապրում արվեստի հավաքումը։ Նրանց կուրացումը և նկարիչների ներկայացումը ամբողջությամբ բարձրացրել են իմ հավաքածուն և ժամանակակից արվեստի հասկացողությունը։" },
-            name: { en: "David Chen", ru: "Давид Чен", hy: "Դավիդ Չեն" },
-            position: { en: "Art Collector & Investor", ru: "Коллекционер и инвестор", hy: "Արվեստի Հավաքորդ և Ներդրող" },
-            initial: "D"
-        },
-        {
-            text: { en: "As an emerging artist, finding the right gallery was crucial. Artikaa provided not just exhibition space but mentorship, visibility, and genuine support that accelerated my career.", ru: "Как начинающему художнику, найти подходящую галерею было crucial. Artikaa предоставила не только выставочное пространство, но и наставничество, видимость и искреннюю поддержку, которая ускорила мою карьеру.", hy: "Որպես սկսնակ նկարիչ՝ ճիշտ պատկերասրահ գտնելը կարևոր էր։ Artikaa-ն ապահովեց ոչ միայն ցուցահանդեսային տարածք, այլև մենթորություն, տեսանելիություն և անկեղծ աջակցություն, որն արագացրեց իմ կարիերան։" },
-            name: { en: "Sofia Martinez", ru: "София Мартинес", hy: "Սոֆիա Մարտինես" },
-            position: { en: "Contemporary Painter", ru: "Современная художница", hy: "Ժամանակակից Նկարչուհի" },
-            initial: "S"
-        },
-        {
-            text: { en: "The corporate art program Artikaa developed for our headquarters has received unanimous praise from employees and visitors. Their understanding of space, brand identity, and artistic value is exceptional.", ru: "Корпоративная арт-программа, разработанная Artikaa для нашей штаб-квартиры, получила единодушную похвалу от сотрудников и посетителей. Их понимание пространства, идентичности бренда и художественной ценности исключительно.", hy: "Artikaa-ի մշակած կորպորատիվ արվեստի ծրագիրը մեր գլխավոր գրասենյակի համար ստացել է միաձայն գովասանք աշխատակիցների և այցելուների կողմից։ Նրանց տարածքի, բրենդի ինքնության և արվեստի արժեքի հասկացողությունը բացառիկ է։" },
-            name: { en: "James Wilson", ru: "Джеймс Уилсон", hy: "Ջեյմս Վիլսոն" },
-            position: { en: "CEO, Global Innovations Inc.", ru: "Генеральный директор, Global Innovations Inc.", hy: "CEO, Global Innovations Inc." },
-            initial: "J"
-        }
-    ];
-    
-    // رندر گالری
-    function renderGallery(filter = 'all') {
-        const galleryGrid = document.getElementById('galleryGrid');
-        galleryGrid.innerHTML = '';
-        
-        const filteredItems = filter === 'all' ? 
-            galleryData : 
-            galleryData.filter(item => item.category === filter);
-        
-        filteredItems.forEach(item => {
-            const galleryItem = document.createElement('div');
-            galleryItem.className = 'gallery-item animate-on-scroll';
-            galleryItem.setAttribute('data-category', item.category);
-            
-            galleryItem.innerHTML = `
-                <img src="${item.image}" alt="${item.title.en}" loading="lazy">
-                <div class="gallery-overlay">
-                    <h3>${item.title[currentLanguage] || item.title.hy}</h3>
-                    <p>${item.description[currentLanguage] || item.description.hy}</p>
-                    <div class="gallery-tags">
-                        ${item.tags.map(tag => `<span class="gallery-tag">${tag}</span>`).join('')}
-                    </div>
+    <!-- Shopping Cart Sidebar -->
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Ձեր Զամբյուղը</h3>
+            <button class="cart-close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-bag"></i>
+                <p>Ձեր զամբյուղն դատարկ է</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Ենթամիջոցներ:</span>
+                    <span id="cartSubtotal">0 ֏</span>
                 </div>
-            `;
-            
-            galleryGrid.appendChild(galleryItem);
-        });
-        
-        observeElements();
-    }
-    
-    // فیلترهای گالری
-    document.querySelectorAll('.filter-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            button.classList.add('active');
-            const filter = button.getAttribute('data-filter');
-            renderGallery(filter);
-        });
-    });
-    
-    // رندر نظرات
-    function renderTestimonials() {
-        const testimonialSlider = document.getElementById('testimonialSlider');
-        const testimonialControls = document.getElementById('testimonialControls');
-        
-        testimonialSlider.innerHTML = '';
-        testimonialControls.innerHTML = '';
-        
-        testimonialsData.forEach((testimonial, index) => {
-            const testimonialCard = document.createElement('div');
-            testimonialCard.className = 'testimonial-card animate-on-scroll';
-            testimonialCard.innerHTML = `
-                <p>${testimonial.text[currentLanguage] || testimonial.text.hy}</p>
-                <div class="client-info">
-                    <div class="client-avatar">${testimonial.initial}</div>
-                    <div class="client-details">
-                        <h4>${testimonial.name[currentLanguage] || testimonial.name.hy}</h4>
-                        <p>${testimonial.position[currentLanguage] || testimonial.position.hy}</p>
-                    </div>
+                <div class="summary-row">
+                    <span>Հարկ (10%):</span>
+                    <span id="cartTax">0 ֏</span>
                 </div>
-            `;
-            testimonialSlider.appendChild(testimonialCard);
-            
-            const control = document.createElement('div');
-            control.className = `testimonial-control ${index === 0 ? 'active' : ''}`;
-            control.addEventListener('click', () => {
-                showTestimonial(index);
-            });
-            testimonialControls.appendChild(control);
-        });
-        
-        observeElements();
-        startTestimonialSlider();
-    }
-    
-    // اسلایدر نظرات
-    function showTestimonial(index) {
-        const testimonialSlider = document.getElementById('testimonialSlider');
-        const controls = document.querySelectorAll('.testimonial-control');
-        const cards = document.querySelectorAll('.testimonial-card');
-        
-        if (cards.length === 0) return;
-        
-        currentTestimonial = index;
-        
-        const cardWidth = cards[0].offsetWidth + 32;
-        testimonialSlider.scrollTo({
-            left: index * cardWidth,
-            behavior: 'smooth'
-        });
-        
-        controls.forEach((control, i) => {
-            control.classList.toggle('active', i === index);
-        });
-    }
-    
-    function startTestimonialSlider() {
-        clearInterval(testimonialInterval);
-        
-        testimonialInterval = setInterval(() => {
-            const nextIndex = (currentTestimonial + 1) % testimonialsData.length;
-            showTestimonial(nextIndex);
-        }, 5000);
-    }
-    
-    // انیمیشن‌های اسکرول
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                
-                // انیمیشن شمارنده‌ها
-                if (entry.target.classList.contains('stat-item')) {
-                    const statNumber = entry.target.querySelector('.stat-number');
-                    const target = parseInt(statNumber.getAttribute('data-target'));
-                    let current = 0;
-                    const duration = 2000;
-                    const increment = target / (duration / 16);
-                    
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            current = target;
-                            clearInterval(timer);
-                        }
-                        statNumber.textContent = Math.floor(current);
-                    }, 16);
-                    
-                    observer.unobserve(entry.target);
-                }
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    function observeElements() {
-        document.querySelectorAll('.animate-on-scroll').forEach(element => {
-            observer.observe(element);
-        });
-    }
-    
-    // سیستم زبان
-    function setLanguage(lang) {
-        currentLanguage = lang;
-        localStorage.setItem('selectedLanguage', lang);
-        document.documentElement.lang = lang;
-        
-        // به‌روزرسانی دکمه‌های زبان
-        document.querySelectorAll('.language-btn').forEach(btn => {
-            if (btn.getAttribute('data-lang') === lang) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
-        });
-        
-        // به‌روزرسانی متون
-        document.querySelectorAll('[data-en], [data-ru], [data-hy]').forEach(element => {
-            const text = element.getAttribute(`data-${lang}`);
-            if (text) {
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA' || element.tagName === 'SELECT') {
-                    if (element.tagName === 'SELECT') {
-                        element.querySelectorAll('option').forEach(option => {
-                            const optionText = option.getAttribute(`data-${lang}`);
-                            if (optionText) {
-                                option.textContent = optionText;
-                            }
-                        });
-                    } else {
-                        element.placeholder = text;
-                    }
-                } else {
-                    element.textContent = text;
-                }
-            }
-        });
-        
-        // به‌روزرسانی گالری
-        document.querySelectorAll('.gallery-item').forEach((item, index) => {
-            const overlay = item.querySelector('.gallery-overlay');
-            if (overlay) {
-                const title = overlay.querySelector('h3');
-                const description = overlay.querySelector('p');
-                
-                if (title && galleryData[index]) {
-                    title.textContent = galleryData[index].title[lang] || galleryData[index].title.hy;
-                }
-                
-                if (description && galleryData[index]) {
-                    description.textContent = galleryData[index].description[lang] || galleryData[index].description.hy;
-                }
-            }
-        });
-        
-        // به‌روزرسانی نظرات
-        renderTestimonials();
-        
-        // به‌روزرسانی عنوان
-        const titles = {
-            en: 'Artikaa | Contemporary Art Gallery',
-            ru: 'Artikaa | Современная художественная галерея',
-            hy: 'Artikaa | Ժամանակակից Արվեստի Պատկերասրահ'
-        };
-        document.title = titles[lang] || titles.hy;
-    }
-    
-    // تغییر زبان
-    document.querySelectorAll('.language-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const lang = button.getAttribute('data-lang');
-            setLanguage(lang);
-        });
-    });
-    
-    // کپی آدرس‌های رمزارز
-    document.addEventListener('click', (e) => {
-        if (e.target.closest('.crypto-address')) {
-            const address = e.target.closest('.crypto-address').getAttribute('data-address');
-            
-            navigator.clipboard.writeText(address).then(() => {
-                showNotification(
-                    currentLanguage === 'en' ? 'Address copied to clipboard!' :
-                    currentLanguage === 'ru' ? 'Адрес скопирован в буфер обмена!' :
-                    'Հասցեն պատճենվել է փոխանակման բուֆերում։'
-                );
-            }).catch(() => {
-                showNotification(
-                    currentLanguage === 'en' ? 'Failed to copy address' :
-                    currentLanguage === 'ru' ? 'Не удалось скопировать адрес' :
-                    'Չհաջողվեց պատճենել հասցեն'
-                );
-            });
-        }
-    });
-    
-    // نوتیفیکیشن
-    function showNotification(message) {
-        const notification = document.getElementById('notification');
-        notification.textContent = message;
-        notification.classList.add('show');
-        
-        setTimeout(() => {
-            notification.classList.remove('show');
-        }, 3000);
-    }
-    
-    // فرم تماس
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-        
-        submitBtn.innerHTML = currentLanguage === 'en' ? '<i class="fas fa-spinner fa-spin"></i> Sending...' :
-                              currentLanguage === 'ru' ? '<i class="fas fa-spinner fa-spin"></i> Отправка...' :
-                              '<i class="fas fa-spinner fa-spin"></i> Ուղարկում...';
-        submitBtn.disabled = true;
-        
-        // شبیه‌سازی ارسال
-        setTimeout(() => {
-            showNotification(
-                currentLanguage === 'en' ? 'Thank you! Your message has been sent successfully.' :
-                currentLanguage === 'ru' ? 'Спасибо! Ваше сообщение успешно отправлено.' :
-                'Շնորհակալություն: Ձեր հաղորդագրությունը հաջողությամբ ուղարկվել է։'
-            );
-            
-            contactForm.reset();
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
-    });
-    
-    // مقداردهی اولیه
-    function init() {
-        setLanguage(currentLanguage);
-        renderGallery();
-        renderTestimonials();
-        observeElements();
-        
-        // آمار اولیه
-        document.querySelectorAll('.stat-number').forEach(stat => {
-            stat.textContent = '0';
-        });
-    }
-    
-    // اجرای مقداردهی اولیه
-    init();
-    
-    // ریسایز ویندو
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            renderTestimonials();
-        }, 250);
-    });
-});
-</script>
+                <div class="summary-row total">
+                    <span>Ընդամենը:</span>
+                    <span id="cartTotal">0 ֏</span>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn">Հաստատել</button>
+        </div>
+    </aside>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Notifications Container -->
+    <div class="notifications-container" id="notificationsContainer"></div>
+
+    <!-- JavaScript -->
+    <script src="ASSETS/js/main.js"></script>
 </body>
 </html>

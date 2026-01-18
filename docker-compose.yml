@@ -1,0 +1,75 @@
+version: "3.9"
+
+services:
+  # Web server
+  web:
+    image: php:8.1-apache
+    container_name: artikaa-web
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - .:/var/www/html
+      - ./docker/apache.conf:/etc/apache2/sites-available/000-default.conf
+      - ./docker/php.ini:/usr/local/etc/php/conf.d/custom.ini
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+    networks:
+      - artikaa-network
+    depends_on:
+      - db
+
+  # Database
+  db:
+    image: mysql:8.0
+    container_name: artikaa-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: artikaa_db
+      MYSQL_USER: artikaa_user
+      MYSQL_PASSWORD: artikaa_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - artikaa-network
+    restart: unless-stopped
+
+  # PHP CLI for background tasks
+  php:
+    image: php:8.1-cli
+    container_name: artikaa-php
+    volumes:
+      - .:/var/www/html
+      - ./docker/php.ini:/usr/local/etc/php/conf.d/custom.ini
+    working_dir: /var/www/html
+    networks:
+      - artikaa-network
+    depends_on:
+      - db
+
+  # phpMyAdmin for database management
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: artikaa-phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: root_password
+      PMA_DATABASE: artikaa_db
+    ports:
+      - "8080:80"
+    networks:
+      - artikaa-network
+    depends_on:
+      - db
+
+volumes:
+  db_data:
+
+networks:
+  artikaa-network:
+    driver: bridge

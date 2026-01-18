@@ -1,0 +1,55 @@
+{
+  "translations": {
+    "hy": {
+      "home": "Հաշվապահ",
+      "gallery": "Պատկերասրահ",
+      "about": "Մեր մասին",
+      "contact": "Կապ",
+      "cart": "Սուրճային",
+      "language": "Լեզու",
+      "search": "Հայտնաբերել",
+      "add_to_cart": "Ավելացնել սուրճային",
+      "price": "Գինը",
+      "quantity": "Քանակ",
+      "total": "Ընդամենը",
+      "checkout": "Վճարել",
+      "remove": "Հանել",
+      "loading": "Բեռնել ենք...",
+      "no_products": "Ապրանք չկա"
+    },
+    "en": {
+      "home": "Home",
+      "gallery": "Gallery",
+      "about": "About Us",
+      "contact": "Contact",
+      "cart": "Shopping Cart",
+      "language": "Language",
+      "search": "Search",
+      "add_to_cart": "Add to Cart",
+      "price": "Price",
+      "quantity": "Quantity",
+      "total": "Total",
+      "checkout": "Checkout",
+      "remove": "Remove",
+      "loading": "Loading...",
+      "no_products": "No products found"
+    },
+    "ru": {
+      "home": "Главная",
+      "gallery": "Галерея",
+      "about": "О нас",
+      "contact": "Контакты",
+      "cart": "Корзина",
+      "language": "Язык",
+      "search": "Поиск",
+      "add_to_cart": "Добавить в корзину",
+      "price": "Цена",
+      "quantity": "Количество",
+      "total": "Итого",
+      "checkout": "Оформить",
+      "remove": "Удалить",
+      "loading": "Загрузка...",
+      "no_products": "Продукты не найдены"
+    }
+  }
+}

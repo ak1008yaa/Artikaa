@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikaa - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="ASSETS/css/main.css">
+    <link rel="stylesheet" href="ASSETS/css/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <h1><i class="fas fa-crown"></i> Artikaa</h1>
+            <ul class="sidebar-menu">
+                <li class="sidebar-menu-item">
+                    <a href="#dashboard" class="active">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#products">
+                        <i class="fas fa-palette"></i>
+                        <span>Products</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#artists">
+                        <i class="fas fa-users"></i>
+                        <span>Artists</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#orders">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Orders</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#payments">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Messages</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#newsletter">
+                        <i class="fas fa-newspaper"></i>
+                        <span>Newsletter</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#analytics">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Analytics</span>
+                    </a>
+                </li>
+                <li class="sidebar-menu-item">
+                    <a href="#settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <div class="admin-header">
+                <h2>Dashboard</h2>
+                <div class="admin-user">
+                    <div class="user-avatar">A</div>
+                    <div>
+                        <p style="margin: 0;">Admin User</p>
+                        <small>Administrator</small>
+                    </div>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                </div>
+            </div>
+
+            <!-- Dashboard Stats -->
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-icon">📊</div>
+                    <div class="card-title">Total Sales</div>
+                    <div class="card-value">45,230,000 AMD</div>
+                    <div class="card-change">+12.5% vs last month</div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">📦</div>
+                    <div class="card-title">Total Orders</div>
+                    <div class="card-value">1,245</div>
+                    <div class="card-change">+8.2% vs last month</div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">👥</div>
+                    <div class="card-title">Total Customers</div>
+                    <div class="card-value">892</div>
+                    <div class="card-change">+5.3% vs last month</div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="card-icon">🎨</div>
+                    <div class="card-title">Products Listed</div>
+                    <div class="card-value">158</div>
+                    <div class="card-change">+3 new this week</div>
+                </div>
+            </div>
+
+            <!-- Products Table -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3 class="table-title">Recent Products</h3>
+                    <div class="table-actions">
+                        <input type="text" class="search-box" placeholder="Search products...">
+                        <button class="btn-primary action-btn" onclick="openAddProduct()">Add Product</button>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Artist</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Minimalist Abstract Collection</td>
+                            <td>Painting</td>
+                            <td>14,500 AMD</td>
+                            <td>5</td>
+                            <td>Artist Name</td>
+                            <td><span class="status-badge success">Active</span></td>
+                            <td>
+                                <button class="action-btn btn-secondary">Edit</button>
+                                <button class="action-btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Elegant Black Dress</td>
+                            <td>Clothing</td>
+                            <td>35,000 AMD</td>
+                            <td>12</td>
+                            <td>Designer</td>
+                            <td><span class="status-badge success">Active</span></td>
+                            <td>
+                                <button class="action-btn btn-secondary">Edit</button>
+                                <button class="action-btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Gold Diamond Ring</td>
+                            <td>Accessory</td>
+                            <td>125,000 AMD</td>
+                            <td>2</td>
+                            <td>Jewelry</td>
+                            <td><span class="status-badge pending">Low Stock</span></td>
+                            <td>
+                                <button class="action-btn btn-secondary">Edit</button>
+                                <button class="action-btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h3 class="table-title">Recent Orders</h3>
+                    <input type="text" class="search-box" placeholder="Search orders...">
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ORD-20260118-ABCD</td>
+                            <td>John Doe</td>
+                            <td>14,500 AMD</td>
+                            <td><span class="status-badge success">Completed</span></td>
+                            <td>2026-01-18</td>
+                            <td>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ORD-20260118-EFGH</td>
+                            <td>Jane Smith</td>
+                            <td>35,000 AMD</td>
+                            <td><span class="status-badge pending">Pending</span></td>
+                            <td>2026-01-18</td>
+                            <td>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>ORD-20260117-IJKL</td>
+                            <td>Robert Johnson</td>
+                            <td>125,000 AMD</td>
+                            <td><span class="status-badge success">Shipped</span></td>
+                            <td>2026-01-17</td>
+                            <td>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div class="modal-overlay" id="addProductModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Add New Product</h3>
+                <button class="modal-close" onclick="closeAddProduct()">&times;</button>
+            </div>
+            
+            <form class="form-grid">
+                <div class="form-group">
+                    <label>Product Name *</label>
+                    <input type="text" class="form-control" placeholder="Enter product name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Category *</label>
+                    <select class="form-control" required>
+                        <option>Select category</option>
+                        <option>Painting</option>
+                        <option>Sculpture</option>
+                        <option>Clothing</option>
+                        <option>Accessory</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Price (AMD) *</label>
+                    <input type="number" class="form-control" placeholder="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Stock *</label>
+                    <input type="number" class="form-control" placeholder="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Artist *</label>
+                    <input type="text" class="form-control" placeholder="Artist name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Image</label>
+                    <input type="file" class="form-control" accept="image/*">
+                </div>
+
+                <div class="form-group" style="grid-column: 1 / -1;">
+                    <label>Description</label>
+                    <textarea class="form-control" placeholder="Product description" rows="4"></textarea>
+                </div>
+
+                <div style="grid-column: 1 / -1; display: flex; gap: 1rem; justify-content: flex-end;">
+                    <button type="button" class="action-btn btn-secondary" onclick="closeAddProduct()">Cancel</button>
+                    <button type="submit" class="action-btn btn-primary">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Simple admin functions
+        function openAddProduct() {
+            document.getElementById('addProductModal').classList.add('active');
+        }
+
+        function closeAddProduct() {
+            document.getElementById('addProductModal').classList.remove('active');
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                // Redirect to login or home
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Menu navigation
+        document.querySelectorAll('.sidebar-menu-item a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all
+                document.querySelectorAll('.sidebar-menu-item a').forEach(l => {
+                    l.classList.remove('active');
+                });
+                
+                // Add active class to clicked
+                this.classList.add('active');
+                
+                // Update header
+                const text = this.querySelector('span').textContent;
+                document.querySelector('.admin-header h2').textContent = text;
+            });
+        });
+
+        // Search functionality
+        document.querySelectorAll('.search-box').forEach(box => {
+            box.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const table = this.closest('.table-container').querySelector('table');
+                
+                if (!table) return;
+                
+                table.querySelectorAll('tbody tr').forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    row.style.display = text.includes(searchTerm) ? '' : 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

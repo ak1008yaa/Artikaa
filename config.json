@@ -1,0 +1,71 @@
+{
+  "site": {
+    "name": "Artikaa Gallery",
+    "description": "Ժամանակակից արվեստի պատկերասրահ",
+    "url": "https://artikaa.am",
+    "language": "hy",
+    "timezone": "Asia/Yerevan"
+  },
+  "api": {
+    "endpoint": "https://api.artikaa.am",
+    "version": "v1",
+    "timeout": 30000
+  },
+  "database": {
+    "host": "localhost",
+    "port": 3306,
+    "name": "artikaa_db",
+    "user": "artikaa_user",
+    "password": "artikaa_secure_password_2026"
+  },
+  "payment": {
+    "stripe": {
+      "public_key": "pk_live_artikaa_stripe_key",
+      "secret_key": "sk_live_artikaa_stripe_secret"
+    },
+    "paypal": {
+      "client_id": "artikaa_paypal_client_id",
+      "secret": "artikaa_paypal_secret"
+    },
+    "crypto": {
+      "enabled": true,
+      "api_key": "artikaa_crypto_api_key"
+    }
+  },
+  "email": {
+    "service": "gmail",
+    "from": "noreply@artikaa.am",
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "smtp_user": "info@artikaa.am",
+    "smtp_password": "artikaa_gmail_app_password"
+  },
+  "security": {
+    "cors_origin": ["https://artikaa.am", "https://www.artikaa.am", "http://localhost:3000"],
+    "session_timeout": 3600,
+    "jwt_secret": "artikaa_jwt_secret_key_2026_production",
+    "encryption_key": "artikaa_encryption_key_2026"
+  },
+  "storage": {
+    "type": "local",
+    "path": "./ASSETS/uploads",
+    "max_file_size": 52428800,
+    "allowed_types": ["image/jpeg", "image/png", "image/webp", "image/gif"]
+  },
+  "analytics": {
+    "google_analytics_id": "G-ARTIKAA2026",
+    "mixpanel_token": "artikaa_mixpanel_token",
+    "enabled": true
+  },
+  "social": {
+    "facebook_app_id": "artikaa_facebook_app_id",
+    "instagram_token": "artikaa_instagram_token",
+    "twitter_api_key": "artikaa_twitter_api_key"
+  },
+  "cache": {
+    "enabled": true,
+    "ttl": 3600,
+    "driver": "memory"
+  },
+  "environment": "production"
+}

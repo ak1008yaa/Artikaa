@@ -1,0 +1,60 @@
+{
+  "categories": [
+    {
+      "id": "painting",
+      "name": {
+        "en": "Paintings",
+        "ru": "Живопись",
+        "hy": "Նկարներ"
+      },
+      "icon": "fas fa-palette",
+      "description": {
+        "en": "Contemporary and classical paintings",
+        "ru": "Современные и классические картины",
+        "hy": "Ժամանակակից և դասական նկարներ"
+      }
+    },
+    {
+      "id": "sculpture",
+      "name": {
+        "en": "Sculptures",
+        "ru": "Скульптуры",
+        "hy": "Քանդակներ"
+      },
+      "icon": "fas fa-cube",
+      "description": {
+        "en": "3D art and sculptures",
+        "ru": "Трёхмерное искусство и скульптуры",
+        "hy": "3D արվեստ և քանդակներ"
+      }
+    },
+    {
+      "id": "digital",
+      "name": {
+        "en": "Digital Art",
+        "ru": "Цифровое искусство",
+        "hy": "Թվային Արվեստ"
+      },
+      "icon": "fas fa-laptop",
+      "description": {
+        "en": "Digital creations and NFTs",
+        "ru": "Цифровые творения и NFT",
+        "hy": "Թվային ստեղծագործություն և NFT"
+      }
+    },
+    {
+      "id": "photography",
+      "name": {
+        "en": "Photography",
+        "ru": "Фотография",
+        "hy": "Ֆոտոգրաֆիա"
+      },
+      "icon": "fas fa-camera",
+      "description": {
+        "en": "Fine art photography",
+        "ru": "Художественная фотография",
+        "hy": "Գեղարվեստական ​​ֆոտոգրաֆիա"
+      }
+    }
+  ]
+}

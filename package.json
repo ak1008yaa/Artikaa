@@ -1,0 +1,29 @@
+{
+  "name": "artikaa-gallery",
+  "version": "1.0.0",
+  "description": "Artikaa Contemporary Art Gallery - Online Store for Armenia",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "postcss assets/css/main.css -o assets/css/main.min.css",
+    "build:js": "terser assets/js/main.js -o assets/js/main.min.js --compress --mangle",
+    "deploy": "npm run build && rsync -avz ./ user@server:/var/www/artikaa.am/"
+  },
+  "keywords": [
+    "art-gallery",
+    "ecommerce",
+    "armenia",
+    "armenian-art",
+    "contemporary-art"
+  ],
+  "author": "Artikaa Team",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "terser": "^5.22.0"
+  }
+}

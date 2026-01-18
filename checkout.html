@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hy" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتیجہ - Artikaa Gallery</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="ASSETS/css/main.css">
+    <link rel="stylesheet" href="ASSETS/css/cart.css">
+    <link rel="stylesheet" href="ASSETS/css/checkout.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">A</div>
+                <span>ARTIKAA</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/">Գլխավոր</a></li>
+                <li><a href="/#gallery">Պատկերասրահ</a></li>
+                <li><a href="/#contact">Կապ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Checkout Section -->
+    <section class="section checkout">
+        <div class="container">
+            <h1 class="section-title">Հաստատում</h1>
+            
+            <div class="checkout-grid">
+                <!-- Order Summary -->
+                <div class="checkout-summary">
+                    <h2>Պատվիրանի ամփոփում</h2>
+                    <div class="summary-items" id="summaryItems">
+                        <!-- Items will be loaded here -->
+                    </div>
+                    <div class="summary-breakdown">
+                        <div class="breakdown-row">
+                            <span>Ենթամիջոցներ:</span>
+                            <span id="summarySubtotal">0 ֏</span>
+                        </div>
+                        <div class="breakdown-row">
+                            <span>Հարկ (10%):</span>
+                            <span id="summaryTax">0 ֏</span>
+                        </div>
+                        <div class="breakdown-row shipping">
+                            <span>Առաքում:</span>
+                            <span id="summaryShipping">2,500 ֏</span>
+                        </div>
+                        <div class="breakdown-row total">
+                            <span>Ընդամենը:</span>
+                            <span id="summaryTotal">0 ֏</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Checkout Form -->
+                <div class="checkout-form">
+                    <form id="checkoutForm">
+                        <!-- Billing Information -->
+                        <fieldset>
+                            <legend>Բիլինգի Տեղեկությունը</legend>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Անուն *</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Ազգանուն *</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Էլ. Հասցե *</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Հեռախոս *</label>
+                                <input type="tel" class="form-control" required>
+                            </div>
+                        </fieldset>
+
+                        <!-- Shipping Information -->
+                        <fieldset>
+                            <legend>Առաքման Տեղեկությունը</legend>
+                            <div class="form-group">
+                                <label>Հասցե *</label>
+                                <input type="text" class="form-control" placeholder="Փողոցի անուն և թիվ" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Քաղաք *</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Անշ/Կոդ *</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <!-- Payment Information -->
+                        <fieldset>
+                            <legend>Վճարման Տեղեկությունը</legend>
+                            <div class="payment-methods">
+                                <label class="payment-method">
+                                    <input type="radio" name="payment" value="card" checked>
+                                    <span>Պլաստիկ Քարտ</span>
+                                </label>
+                                <label class="payment-method">
+                                    <input type="radio" name="payment" value="bank">
+                                    <span>Բանկային Փոխանցում</span>
+                                </label>
+                                <label class="payment-method">
+                                    <input type="radio" name="payment" value="cash">
+                                    <span>Կանխավճար</span>
+                                </label>
+                            </div>
+
+                            <div id="cardPayment" class="payment-details">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Քարտի Տեր *</label>
+                                        <input type="text" class="form-control" placeholder="Անուն և Ազգանուն" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Քարտի Համարը *</label>
+                                    <input type="text" class="form-control" placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Ժամկետ *</label>
+                                        <input type="text" class="form-control" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>CVV *</label>
+                                        <input type="text" class="form-control" placeholder="123" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="bankPayment" class="payment-details" style="display: none;">
+                                <p>Մենք կուղարկենք ձեզ բանկային փոխանցման մանրամասները հաստատման հետ:</p>
+                            </div>
+
+                            <div id="cashPayment" class="payment-details" style="display: none;">
+                                <p>Դուք կարող եք վճարել մեր գրասենյակում կամ առաքման ժամանակ:</p>
+                            </div>
+                        </fieldset>
+
+                        <div class="checkout-actions">
+                            <a href="/" class="btn btn-secondary">Շարունակել Գնումը</a>
+                            <button type="submit" class="btn btn-primary">Հաստատել Պատվիրանը</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Artikaa Gallery. Բոլոր իրավունքները պաշտպանված են:</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="ASSETS/js/checkout.js" type="module"></script>
+</body>
+</html>

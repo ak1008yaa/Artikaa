@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hy" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تأكيد الطلب - Artikaa Gallery</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="ASSETS/css/main.css">
+    <link rel="stylesheet" href="ASSETS/css/checkout.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">A</div>
+                <span>ARTIKAA</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/">Գլխավոր</a></li>
+                <li><a href="/#gallery">Պատկերասրահ</a></li>
+                <li><a href="/#contact">Կապ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Order Confirmation Section -->
+    <section class="section">
+        <div class="container">
+            <div class="confirmation-card">
+                <div class="confirmation-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1>Պատվիրանն հաստատված է!</h1>
+                <p class="confirmation-message">Շնորհակալություն ձեր գնման համար:</p>
+
+                <div class="order-details">
+                    <div class="detail-item">
+                        <label>Պատվիրանի ID</label>
+                        <p id="orderId">-</p>
+                    </div>
+                    <div class="detail-item">
+                        <label>Մեյլ</label>
+                        <p id="orderEmail">-</p>
+                    </div>
+                    <div class="detail-item">
+                        <label>Հաստատում ID</label>
+                        <p id="confirmationNumber">-</p>
+                    </div>
+                </div>
+
+                <div class="confirmation-message-box">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Մեր թիմը շուտ կվերահաստատի ձեր պատվիրանը:</p>
+                    <p>Հաստատման հղումը կուղարկվի ձեր մեյլ հասցեին:</p>
+                </div>
+
+                <div class="confirmation-actions">
+                    <a href="/" class="btn btn-primary">Վերադառ գլխավոր</a>
+                    <a href="/#gallery" class="btn btn-secondary">Շարունակել Գնումը</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Artikaa Gallery. Բոլոր իրավունքները պաշտպանված են:</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get order ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('orderId') || 'ORD-2026-XXXXX';
+        
+        document.getElementById('orderId').textContent = orderId;
+        document.getElementById('confirmationNumber').textContent = Math.random().toString(36).substr(2, 9).toUpperCase();
+        
+        // Get email from localStorage (if available)
+        const orderData = JSON.parse(localStorage.getItem('lastOrder') || '{}');
+        document.getElementById('orderEmail').textContent = orderData.email || 'info@artikaa.am';
+    </script>
+</body>
+</html>

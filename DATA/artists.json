@@ -1,0 +1,154 @@
+{
+  "artists": [
+    {
+      "id": "ARTIST-001",
+      "name": "Անի Հարությունյան",
+      "name_en": "Ani Harutyunyan",
+      "bio": "Ժամանակակից նկարիչ, որ մասնագետ է աբստրակտ արտահայտչական նկարների մեջ։",
+      "bio_en": "Contemporary artist specializing in abstract expressionism and modern painting techniques.",
+      "specialization": "Abstract Expressionism",
+      "image": "ASSETS/images/artists/artist-1.jpg",
+      "avatar": "ASSETS/images/artists/artist-1-avatar.jpg",
+      "founded_year": 2018,
+      "works_count": 45,
+      "followers": 1200,
+      "rating": 4.8,
+      "location": "Երևան, Հայաստան",
+      "location_en": "Yerevan, Armenia",
+      "social": {
+        "instagram": "https://instagram.com/ani.harutyunyan",
+        "website": "https://aniharutyunyan.am",
+        "email": "ani@artikaa.am"
+      },
+      "featured_works": [
+        "ART-001"
+      ],
+      "bio_long": "Անի Հարությունյանը մեկ է իր սերնդի ամենաազդեցիկ ժամանակակից նկարիչներից։ Նա համատեղում է ավանդական հայկական արվեստի տարրերը հետ ժամանակակից կնիգային տեխնիկայի հետ, ստեղծելով ստեղծում, որ խոհ-պեղել են միջազգային արվեստի հանրությունը։"
+    },
+    {
+      "id": "ARTIST-002",
+      "name": "Արամ Պետրոսյան",
+      "name_en": "Aram Petrosyan",
+      "bio": "Հայտնի հայ լուսանկարիչ, որ մասնագետ է բնական լուսանկարի և լանդշաֆտի մեջ։",
+      "bio_en": "Renowned Armenian photographer known for landscape and nature photography with exceptional quality.",
+      "specialization": "Photography",
+      "image": "ASSETS/images/artists/artist-2.jpg",
+      "avatar": "ASSETS/images/artists/artist-2-avatar.jpg",
+      "founded_year": 2015,
+      "works_count": 32,
+      "followers": 890,
+      "rating": 4.9,
+      "location": "Երևան, Հայաստան",
+      "location_en": "Yerevan, Armenia",
+      "social": {
+        "instagram": "https://instagram.com/aram.petrosyan",
+        "website": "https://arampetrosyan.am",
+        "email": "aram@artikaa.am"
+      },
+      "featured_works": [
+        "ART-002"
+      ],
+      "bio_long": "Արամ Պետրոսյանի լուսանկարները հայտնի են դրանց տեխնիկական կատարելության և մեծ լուսացածության համար։ Նա բազմաթիվ միջազգային ցուցահանդեսներում մասնակցել է և շատ մրցակցություններ շահել:"
+    },
+    {
+      "id": "ARTIST-003",
+      "name": "Գագիկ Դավթյան",
+      "name_en": "Gagik Davtyan",
+      "bio": "Գիտուն քանդակագործ և ժամանակակից արվեստի ինովատոր Հայաստանից։",
+      "bio_en": "Master sculptor and contemporary art innovator from Armenia with international recognition.",
+      "specialization": "Sculpture",
+      "image": "ASSETS/images/artists/artist-3.jpg",
+      "avatar": "ASSETS/images/artists/artist-3-avatar.jpg",
+      "founded_year": 2012,
+      "works_count": 28,
+      "followers": 756,
+      "rating": 4.7,
+      "location": "Երևան, Հայաստան",
+      "location_en": "Yerevan, Armenia",
+      "social": {
+        "instagram": "https://instagram.com/gagik.davtyan",
+        "website": "https://gagikdavtyan.am",
+        "email": "gagik@artikaa.am"
+      },
+      "featured_works": [
+        "ART-003"
+      ],
+      "bio_long": "Գագիկ Դավթյանի քանդակները ճանաչված են դրանց ուժեղ ձևի ամբ և արտահայտչական ուժի համար։ Նա աշխատել է տիտանային պողոսը եւ այլ տեղերում՝ ստեղծելով հատուկ քանդակներ, որ բնակած թեմատիկ հակադրություններ:"
+    },
+    {
+      "id": "ARTIST-004",
+      "name": "Նաիրա Գրիգորյան",
+      "name_en": "Nayra Grigoryan",
+      "bio": "Ժամանակակից ջրաներկ նկարիչ և արվեստի դասընդհանցիչ:",
+      "bio_en": "Contemporary watercolor artist and art instructor with a passion for color and form.",
+      "specialization": "Watercolor Painting",
+      "image": "ASSETS/images/artists/artist-4.jpg",
+      "avatar": "ASSETS/images/artists/artist-4-avatar.jpg",
+      "founded_year": 2016,
+      "works_count": 38,
+      "followers": 654,
+      "rating": 4.6,
+      "location": "Երևան, Հայաստան",
+      "location_en": "Yerevan, Armenia",
+      "social": {
+        "instagram": "https://instagram.com/nayra.grigoryan",
+        "website": "https://nayragrigoryan.am",
+        "email": "nayra@artikaa.am"
+      },
+      "featured_works": [
+        "ART-004"
+      ],
+      "bio_long": "Նաիրա Գրիգորյանը հայտնի է ջրաներկի միջոցով գույների չակերտ հավակեցման համար։ Նա նաև հանդես է գալիս բազմաթիվ արվեստի դասընդհանցիչ ծրագրերում, որը լքում է իր գիտելիքներ և կամայոն հաջորդ սերունդ նկարիչներին:"
+    },
+    {
+      "id": "ARTIST-005",
+      "name": "Վազգեն Թովմասյան",
+      "name_en": "Vazgen Tomasyan",
+      "bio": "Թվային արվեստի նկարիչ և մուլտիմեդիա ստեղծիչ:",
+      "bio_en": "Digital artist and multimedia creator exploring the intersection of technology and art.",
+      "specialization": "Digital Art",
+      "image": "ASSETS/images/artists/artist-5.jpg",
+      "avatar": "ASSETS/images/artists/artist-5-avatar.jpg",
+      "founded_year": 2019,
+      "works_count": 52,
+      "followers": 2145,
+      "rating": 4.5,
+      "location": "Երևան, Հայաստան",
+      "location_en": "Yerevan, Armenia",
+      "social": {
+        "instagram": "https://instagram.com/vazgen.tomasyan",
+        "website": "https://vazgentomasyan.am",
+        "email": "vazgen@artikaa.am"
+      },
+      "featured_works": [
+        "ART-005"
+      ],
+      "bio_long": "Վազգեն Թովմասյանը գործիր է թվային արվեստի սահմաններ տեսականացիր: Նա կիրառում է վերջին ճանապարհային տեխնոլոգիաներ ստեղծելու իր արվեստ, որ ֆանտաստիկ և տեխնիկական կատարելության միջոցով ճանաչել համե միջազգային թվային արվեստի համայնքում:"
+    },
+    {
+      "id": "ARTIST-006",
+      "name": "Սյուզան Խաչատրյան",
+      "name_en": "Susan Khachatryan",
+      "bio": "Ժամանակակից քար քանդակագործ, որ մասնագետ է ձեւային գործերում:",
+      "bio_en": "Contemporary stone sculptor specializing in figurative and abstract sculptural forms.",
+      "specialization": "Stone Sculpture",
+      "image": "ASSETS/images/artists/artist-6.jpg",
+      "avatar": "ASSETS/images/artists/artist-6-avatar.jpg",
+      "founded_year": 2014,
+      "works_count": 25,
+      "followers": 543,
+      "rating": 4.8,
+      "location": "Երևան, Հայաստան",
+      "location_en": "Yerevan, Armenia",
+      "social": {
+        "instagram": "https://instagram.com/susan.khachatryan",
+        "website": "https://susankhachatryan.am",
+        "email": "susan@artikaa.am"
+      },
+      "featured_works": [
+        "ART-006"
+      ],
+      "bio_long": "Սյուզան Խաչատրյանի քար քանդակները գտածի առաջ ցույց են տալիս իր հաստատական նկատվածության և ստորստորի հայեցակարգային խորարքի:"
+    }
+  ]
+}
