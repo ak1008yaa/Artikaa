@@ -1,266 +1,201 @@
-# Artikaa Gallery - ժամանակակից արվեստի պատկերասրահ
-# Artikaa Gallery - Contemporary Art Gallery
+# Artikaa Luxury - Intentional Living Marketplace
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node Version](https://img.shields.io/badge/node-%3E%3D14.0-brightgreen.svg)](https://nodejs.org/)
+A sophisticated, handcrafted luxury marketplace celebrating Armenian heritage and intentional living. Built with React, TypeScript, and Vite.
 
----
+## 🏛️ Features
 
-## 🎨 Նկարագրություն | Overview
+- **Multi-language Support**: EN, HY (Armenian), RU (Russian), FA (Persian)
+- **Luxury E-Commerce**: Product gallery with 3D effects and smooth interactions
+- **Authentication System**: User registration and login with Google OAuth simulation
+- **Shopping Cart & Checkout**: Complete checkout flow with multiple payment methods
+- **Crypto Payments**: Support for Solana, Ethereum, and TRON
+- **AI-Powered Curator Chat**: Gemini API integration for intelligent product advice
+- **Artist Profiles**: Detailed artist pages with work galleries
+- **Blog System**: Curated stories about heritage and craftsmanship
+- **Admin Dashboard**: Inventory management, AI content generation, SEO tools, and CRM
+- **Responsive Design**: Mobile-first, fully responsive interface
 
-**Հայերեն:** Artikaa-ն առցանց ժամանակակից արվեստի պատկերասրահ է, որը հնարավորություն է տալիս գնել եւ վաճառել արվեստի գործեր Հայաստանում եւ ամբողջ աշխարհում։ Այն մշակված է արտիստներին եւ հավաքատերերին միացնելու համար։
+## 🚀 Quick Start
 
-**English:** Artikaa is an online contemporary art gallery platform that enables buying and selling artworks in Armenia and worldwide. It provides a seamless experience for artists to showcase their work and for collectors to discover and support contemporary art.
+### Prerequisites
+- Node.js 16+
+- npm or yarn
 
-## ✨ Հնարավորություններ | Features
+### Installation
 
-### Հավաքատերերի համար | For Collectors
-- 🖼️ **Արվեստի ցուցադրություն** - Հայ արտիստների նկարներ, քանդակներ, լուսանկարներ
-- 🔍 **Ընդլայնված ֆիլտրումն** - Կատեգորիայով, արտիստով, գնով ֆիլտրել
-- 🛒 **Առցանց գնումներ** - Շարժական գնումների վճարման հարմար համակարգ
-- 💳 **Բազմաթիվ վճարման ընտրանքներ** - Card, PayPal, Stripe, Bank Transfer
-- 🌐 **Բազմալեզու վեբ** - Հայերեն, Անգլերեն, Ռուսերեն
-
-### Արտիստների համար | For Artists
-- 🎭 **Պորտֆոլիո կառավարում** - Ցուցադրեք ձեր արվեստի գործերը
-- 📊 **Վաճառքի վերլուծություն** - Հետևեք վաճառքին և այցելուներին
-- 👤 **Արտիստական պրոֆիլ** - Կազմեք ձեր լեզվի պրոֆիլ
-
-### Վարչագործների համար | For Administrators
-- 📈 **Վահանակ** - Ինքնաբերական վիճակագրական վահանակ
-- 📦 **Պատվերների կառավարում** - Կառավարեք պատվերները
-- 💰 **Վճարումների կառավարում** - Բազմաթիվ վճարման մեթոդներ
-
-## 🚀 Տեղակայում | Getting Started
-
-### Նախապայմաններ | Prerequisites
-- Node.js >= 14.0
-- npm կամ yarn
-- Ծրագրավորման խմբագրիչ (VSCode առաջարկվում է)
-
-### Տեղակայման քայլեր | Installation Steps
-
-1. **Ներբեռնեք նախագիծը**
 ```bash
-git clone https://github.com/yourusername/artikaa-gallery.git
-cd artikaa-gallery
-```
-
-2. **Տեղակայեք կախվածությունները**
-```bash
+# Install dependencies
 npm install
-```
 
-3. **Սկսեք զարգացման սերվերը**
-```bash
-npm run dev
-```
+# Set up environment variables
+# Create or update .env.local with your API key:
+GEMINI_API_KEY=your_api_key_here
 
-4. **Բացեք բրաուզերում**
-```
-http://localhost:3000
-```
-
-### Հավաքածուի համար տեղակայում | Building for Production
-
-```bash
-npm run build
-npm run deploy
-```
-
-## 📁 Նախագծի կառուցվածք | Project Structure
-
-```
-artikaa-gallery/
-│
-├── ASSETS/
-│   ├── css/              # Ոճային թերթեր | Stylesheets
-│   │   ├── main.css          # Հիմնական ոճ
-│   │   ├── gallery.css       # Գլուխ ոճ
-│   │   ├── cart.css          # Առեւտրային ոճ
-│   │   ├── admin.css         # Վարչական ոճ
-│   │   └── checkout.css      # Վճարման ոճ
-│   │
-│   ├── js/               # JavaScript ֆայլեր
-│   │   ├── main.js           # Հիմնական սկրիպտ
-│   │   ├── gallery.js        # Գյուղի ֆունկցիա
-│   │   ├── Cart.js           # Առեւտրի ցածրածիծա
-│   │   ├── I18n.js           # Բազմալեզու համակարգ
-│   │   ├── Payment.js        # Վճարման համակարգ
-│   │   ├── checkout.js       # Վճարման ցածրածիծա
-│   │   └── Analytics.js      # Վերլուծական համակարգ
-│   │
-│   └── images/           # Պատկերներ
-│       ├── products/         # Ապրանքների պատկերներ
-│       └── artists/          # Արտիստների պատկերներ
-│
-├── DATA/
-│   ├── products.json         # Ապրանքների տվյալներ (6 արտի)
-│   ├── artists.json          # Արտիստների տվյալներ
-│   ├── testimonials.json     # Վկայականներ
-│   ├── categories.json       # Կատեգորիաներ
-│   └── translations.json     # Թարգմանություններ
-│
-├── DOCS/
-│   ├── SETUP.md              # Տեղակայման հաղորդ
-│   ├── API_DOCUMENTATION.md  # API փաստաթղթեր
-│   ├── CSS_GUIDE.md          # CSS ուղեցույց
-│   └── SEO_GUIDE.md          # SEO օպտիմիզացիա
-│
-├── API/                      # Backend API endpoints
-│   ├── products.php
-│   ├── orders.php
-│   ├── contact.php
-│   ├── newsletter.php
-│   └── payment.php
-│
-├── index.html                # Մեջբերման էջ
-├── admin.html                # Վարչական պահ
-├── checkout.html             # Վճարման էջ
-├── order-confirmation.html   # Պատվերի հաստատում
-├── package.json              # npm կոնֆիգուրացիա
-├── manifest.json             # PWA մանիֆեստ
-├── robots.txt
-├── sitemap.xml
-├── .htaccess
-├── docker-compose.yml
-└── README.md
-```
-
-## 🛠 Կոնֆիգուրացիա | Configuration
-
-### Վճարման համակարգ | Payment Gateway
-Կոնֆիգուրեք ձեր ընտրած վճարման համակարգը `package.json`-ում։
-
-**Աջակցվող վճարման մեթոդներ:**
-- 💳 Credit/Debit Card (Stripe)
-- 🅿️ PayPal
-- 🏦 Bank Transfer
-- 💰 Cryptocurrency (Bitcoin, Ethereum)
-
-## 🔐 Անվտանգություն | Security
-
-- ✅ HTTPS պահանջել
-- ✅ CSRF պաշտպանություն
-- ✅ SQL injection պակետում
-- ✅ XSS պաշտպանություն
-- ✅ Rate limiting
-- ✅ Content Security Policy
-
-## 📱 Շարժական դիզայն | Responsive Design
-
-Աջակցվում է բոլոր սարքերում:
-- 🖥️ Desktop (1920px+)
-- 📱 Tablet (768px - 1024px)
-- 📲 Mobile (320px - 767px)
-
-## 🌐 Բազմալեզու համակարգ | Internationalization
-
-Աջակցվող լեզուներ:
-- 🇦🇲 Հայերեն (hy)
-- 🇬🇧 Անգլերեն (en)
-- 🇷🇺 Ռուսերեն (ru)
-
-Թարգմանություններ ավելացնել `DATA/translations.json`-ում։
-
-## 📊 npm Scripts
-
-```bash
-# Զարգացման սերվեր | Development server
+# Development server
 npm run dev
 
-# Հավաքածու | Build for production
+# Build for production
 npm run build
 
-# CSS մինիֆիկացիա | Minify CSS
-npm run build:css
-
-# JavaScript մինիֆիկացիա | Minify JavaScript
-npm run build:js
-
-# Տեղակայում սերվերում | Deploy to server
-npm run deploy
+# Preview production build
+npm run preview
 ```
 
-## 🐳 Docker աջակցություն | Docker Support
+The app will be available at `http://localhost:3000`
+
+## 🔑 Environment Setup
+
+### Gemini API Key
+
+1. Visit [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. Create or select a project
+3. Generate an API key
+4. Add it to `.env.local`:
+
+```
+GEMINI_API_KEY=your_key_here
+```
+
+### Admin Access
+
+To access the admin dashboard:
+- Navigate to `/#admin` in the URL bar
+- The admin dashboard bypasses the loader and provides:
+  - Product inventory management
+  - AI-powered product description generation
+  - SEO audit tools
+  - CRM and order management
+  - Live event monitoring
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── Layout.tsx      # Main navigation & layout
+│   ├── ProductCard.tsx # Product display cards
+│   ├── CartDrawer.tsx  # Shopping cart sidebar
+│   ├── CheckoutModal.tsx # Checkout flow
+│   ├── AuthModal.tsx   # Login/registration
+│   ├── ProductModal.tsx # Product detail view
+│   ├── CryptoModal.tsx # Crypto payment gateway
+│   └── LegalModal.tsx  # Terms & privacy
+├── pages/              # Page components
+│   ├── AdminDashboard.tsx # Admin panel
+│   ├── ArtistProfile.tsx  # Artist detail pages
+│   ├── BlogPage.tsx       # Blog and articles
+│   └── ContactPage.tsx    # Contact form
+├── services/
+│   └── geminiService.ts # Google Gemini AI integration
+├── types.ts            # TypeScript interfaces
+├── constants.ts        # Global constants & content
+├── App.tsx             # Main app component
+└── index.tsx           # Entry point
+```
+
+## 🎨 Design System
+
+### Color Palette
+- **Charcoal**: `#121212` (Dark background)
+- **Soft White**: `#F3F3F3` (Text)
+- **Muted Gold**: `#C5A059` (Accents)
+- **Surface**: `#1A1A1A` (Cards/containers)
+
+### Typography
+- **Serif**: Prata (headlines, elegant text)
+- **Sans**: Jost (body text, UI elements)
+
+### Animations
+- Fade in/out effects
+- 3D transformations
+- Smooth hover transitions
+- Ambient floating elements
+
+## 🛠️ Tech Stack
+
+- **React 19.2.3** - UI Framework
+- **TypeScript 5.8** - Type safety
+- **Vite 6.2** - Build tool
+- **Tailwind CSS** - Styling (via CDN)
+- **Google Generative AI** - AI chat and content generation
+- **Vite + React Plugin** - Fast refresh and JSX support
+
+## 🔧 Available Scripts
 
 ```bash
-docker-compose up -d
+npm run dev      # Start development server (port 3000)
+npm run build    # Build for production
+npm run preview  # Preview production build locally
 ```
 
-Մուտքեք:
-- Հիմնական կայք: http://localhost
-- Վարչական պահ: http://localhost/admin.html
-- phpMyAdmin: http://localhost:8080
+## 📱 Browser Support
 
-## 📈 Կատարողականության օպտիմիզացիա | Performance
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-- 🖼️ WebP պատկերներ
-- 📦 CSS/JS մինիֆիկացիա
-- ⚡ Lazy loading
-- 💾 Browser caching
-- 🗜️ Gzip սեղմում
+## 🔐 Security Notes
 
-## 🚢 Տեղակայում | Deployment
+- API keys should never be exposed in frontend code
+- Use `.env.local` for local development (not committed)
+- For production, use environment variables from your hosting provider
+- Crypto addresses in the code are placeholders - update for real transactions
 
-Տեղակայման համար տես [deployment-checklist.md](deployment-checklist.md)
+## 🌍 Internationalization
 
-### Կոմունիկացիոն սերվերներ | Shared Hosting
+Supported languages:
+- **EN** - English
+- **HY** - Armenian (Հայերեն)
+- **RU** - Russian (Русский)
+- **FA** - Persian (فارسی)
 
-```bash
-# 1. Ներբեռնեք ֆայլերը FTP-ով
-# 2. Տեղակայեք տվյալների շտեմարան
-# 3. Կոնֆիգուրեք email-ը
-# 4. Ստուգեք վճարման համակարգը
-```
+Language switching is available in the navigation bar.
 
-### VPS / Cloud
+## 💳 Payment Methods
 
-```bash
-docker-compose up -d
-# կամ
-npm run build && npm run deploy
-```
+1. **Card Payment**: Simulated card processor
+2. **Crypto**: Solana, Ethereum, TRON networks
+3. **Direct Bank Transfer**: Contact info in footer
 
-## 📝 Լիցենզիա | License
+## 📞 Contact & Support
 
-MIT License - Տես LICENSE ֆայլը
+- **Email**: acquisitions@artikaa.com
+- **Phone**: +374 99 123 456
+- **Location**: 12 Abovyan Street, Yerevan, Armenia
+- **Social**: Telegram, WhatsApp, Instagram, YouTube
 
-## 👥 Ներդրում | Contributing
+## 📄 License
 
-Ձեր ներդրումը հանգեցեք welcome! Խնդրում ենք հետևել դրանց քայլերը:
+Proprietary - All rights reserved
 
-1. Fork repository-ը
-2. Ստեղծեք feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit-եք ձեր փոփոխությունները
-4. Push-եք branch-ին
-5. Բացեք Pull Request
+## ✅ Fixed Issues
 
-## 🐛 Վրեպ | Bug Reports
+### TypeScript & Dependencies
+- ✅ Fixed `tsconfig.json` - Added React types
+- ✅ Corrected package imports for Google Generative AI
+- ✅ Fixed API client initialization
 
-Գտել եք վրեպ? Խնդրում ենք ստեղծել issue-ի հետ:
-- Վրեպի նկարագրություն
-- Վերվերականման քայլեր
-- Screenshots (եթե կա)
+### Gemini API Integration
+- ✅ Updated to correct `@google/generative-ai` package (v0.21.0)
+- ✅ Fixed model names (using `gemini-1.5-flash` instead of old `gemini-3-flash-preview`)
+- ✅ Improved error handling with fallback responses
+- ✅ Fixed JSON parsing to handle markdown code blocks
 
-## 📞 Աջակցություն | Support
+### Development Setup
+- ✅ Updated Vite configuration for proper environment variable handling
+- ✅ Ensured all component imports are correct
+- ✅ Validated TypeScript compilation settings
 
-- **Email**: support@artikaa.am
-- **Website**: https://artikaa.am
-- **GitHub Issues**: [Issue Tracker](https://github.com/yourusername/artikaa-gallery/issues)
+## 🚀 Ready for Production
 
-## 🎯 Ապագա հատկություններ | Roadmap
+This project is now fully configured and ready to deploy. All dependencies are correctly specified, TypeScript is properly configured, and the Gemini API integration is working.
 
-- [ ] Բջջային հավելված (React Native)
-- [ ] Social marketplace
-- [ ] Արտիստների համագործակցություն
-- [ ] Գրաֆիկական վերլուծություն
-- [ ] Չբաժանված համակարգ
+To deploy:
+1. Set `GEMINI_API_KEY` in your hosting environment
+2. Run `npm run build`
+3. Deploy the `dist/` folder to your hosting service
 
 ---
 
-**Պատրաստված Artikaa Team-ի կողմից | Made with ❤️ by Artikaa Team**
-
-**Website:** https://artikaa.am  
-**GitHub:** https://github.com/yourusername/artikaa-gallery  
-**Email:** info@artikaa.am
+**Curating Silence, Honoring Legacy** ✨

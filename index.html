@@ -1,403 +1,246 @@
+
 <!DOCTYPE html>
-<html lang="hy" dir="ltr" id="htmlElement">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artikaa | Ժամանակակից Արվեստի Պատկերասրահ եւ Առցանց Խանութ</title>
-    <meta name="description" content="Artikaa Ժամանակակից Արվեստի Պատկերասրահ - գնեք եւ վաճառեք ժամանակակից արվեստի գործեր Հայաստանում">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Manifest for PWA -->
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="ASSETS/css/main.css">
-    <link rel="stylesheet" href="ASSETS/css/gallery.css">
-    <link rel="stylesheet" href="ASSETS/css/cart.css">
-    
-    <!-- Schema.org Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ArtGallery",
-        "name": "Artikaa Ժամանակակից Արվեստի Պատկերասրահ",
-        "url": "https://artikaa.am",
-        "logo": "https://artikaa.am/images/logo.png",
-        "description": "Contemporary art gallery and online store for Armenian artists and art collectors",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Հանրապետության Հրապարակ 25",
-            "addressLocality": "Երևան",
-            "addressCountry": "AM"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "Sales",
-            "telephone": "+374-10-XXXXXX",
-            "email": "info@artikaa.am"
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Artikaa Luxury | Curated Fine Art & Intentional Living</title>
+    <meta name="description" content="Artikaa: The premier global marketplace for authentic Armenian heritage art and bespoke luxury. 100% Handcrafted, unique masterpieces delivered globally." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prata&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              charcoal: '#121212',
+              softWhite: '#F3F3F3',
+              mutedGold: '#C5A059',
+              goldHover: '#D4AF37',
+              surface: '#1A1A1A',
+            },
+            fontFamily: {
+              serif: ['Prata', 'serif'],
+              sans: ['Jost', 'sans-serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-out': 'fadeOut 0.8s ease-in forwards',
+              'marquee': 'marquee 30s linear infinite',
+              'slide-in': 'slideIn 0.3s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px) translateZ(-50px)' },
+                '100%': { opacity: '1', transform: 'translateY(0) translateZ(0)' },
+              },
+              fadeOut: {
+                '0%': { opacity: '1' },
+                '100%': { opacity: '0', visibility: 'hidden' },
+              },
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-100%)' },
+              },
+              slideIn: {
+                '0%': { transform: 'translateX(100%)' },
+                '100%': { transform: 'translateX(0)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          }
         }
-    }
+      }
     </script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        background-color: #121212;
+        color: #F3F3F3;
+        overflow-x: hidden;
+        overscroll-behavior-y: none; /* Prevents rubber-banding/black space at bottom */
+        scrollbar-width: thin; /* Firefox */
+        scrollbar-color: #333 #121212; /* Firefox */
+      }
+      
+      body {
+        perspective: 1500px; /* Global Depth */
+      }
+
+      /* Chrome Autofill Dark Mode Fix */
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover, 
+      input:-webkit-autofill:focus, 
+      textarea:-webkit-autofill,
+      textarea:-webkit-autofill:hover,
+      textarea:-webkit-autofill:focus,
+      select:-webkit-autofill,
+      select:-webkit-autofill:hover,
+      select:-webkit-autofill:focus {
+        -webkit-text-fill-color: #F3F3F3;
+        -webkit-box-shadow: 0 0 0px 1000px #0f0f0f inset;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+      
+      /* 3D Gold Text */
+      .text-3d-gold {
+        background: linear-gradient(to bottom, #F8F8F8 0%, #C5A059 40%, #8A6E30 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 2px 0px rgba(138, 110, 48, 0.5));
+      }
+
+      /* Tactile Maximalism - 3D Buttons */
+      .btn-tactile {
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        background: linear-gradient(145deg, #C5A059, #a68545);
+        box-shadow: 
+          0 4px 6px -1px rgba(0, 0, 0, 0.5), 
+          inset 1px 1px 1px rgba(255, 255, 255, 0.4),
+          inset -1px -1px 2px rgba(0, 0, 0, 0.2);
+        transform-style: preserve-3d;
+      }
+      .btn-tactile:active {
+        transform: scale(0.98) translateZ(-2px);
+        box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+      
+      /* Ultra-Realistic 3D Orb Icons */
+      .icon-orb {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at 35% 35%, rgba(60, 60, 60, 1) 0%, #000 100%);
+        box-shadow: 
+          inset -3px -3px 8px rgba(255, 255, 255, 0.1),
+          inset 4px 4px 10px rgba(0, 0, 0, 0.9),
+          0 10px 20px rgba(0,0,0,0.6);
+        border: 1px solid rgba(255,255,255,0.1);
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        overflow: hidden;
+        border-radius: 50%;
+      }
+
+      /* Specular Highlight / Glint */
+      .icon-orb::before {
+        content: '';
+        position: absolute;
+        top: 10%;
+        left: 15%;
+        width: 40%;
+        height: 25%;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 60%);
+        transform: rotate(-45deg);
+        filter: blur(2px);
+        opacity: 0.8;
+        pointer-events: none;
+      }
+      
+      /* Ambient Bottom Light */
+      .icon-orb::after {
+        content: '';
+        position: absolute;
+        bottom: 5%;
+        right: 15%;
+        width: 60%;
+        height: 40%;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(197, 160, 89, 0.4) 0%, transparent 70%);
+        filter: blur(6px);
+        opacity: 0.4;
+        pointer-events: none;
+      }
+
+      .icon-orb:hover {
+        transform: translateY(-8px) scale(1.1);
+        box-shadow: 
+          inset -2px -2px 6px rgba(255, 255, 255, 0.2),
+          inset 2px 2px 6px rgba(0, 0, 0, 0.9),
+          0 20px 40px rgba(0,0,0,0.6),
+          0 0 25px rgba(197, 160, 89, 0.6); /* Gold Glow */
+        border-color: rgba(197, 160, 89, 0.5);
+      }
+
+      .icon-orb svg {
+         filter: drop-shadow(0 4px 6px rgba(0,0,0,0.9));
+         transition: transform 0.3s ease;
+         position: relative;
+         z-index: 10;
+         color: #aaa;
+      }
+      
+      .icon-orb:hover svg {
+         transform: scale(1.1) rotate(5deg);
+         color: #fff;
+      }
+
+      /* 3D Card Effect */
+      .card-3d-wrapper {
+        perspective: 1000px;
+      }
+      .card-3d {
+        transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      }
+      .card-3d:hover {
+        transform: rotateX(2deg) rotateY(-2deg) translateZ(20px);
+        box-shadow: 
+          20px 20px 60px rgba(0,0,0,0.5), 
+          -20px -20px 60px rgba(255,255,255,0.02);
+      }
+
+      /* Inset Inputs */
+      .input-inset {
+        background: #0f0f0f;
+        box-shadow: inset 2px 2px 6px rgba(0,0,0,0.8), inset -1px -1px 4px rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.05);
+      }
+      .input-inset:focus {
+        box-shadow: inset 3px 3px 8px rgba(0,0,0,0.9), inset -1px -1px 4px rgba(197, 160, 89, 0.2);
+        border-color: rgba(197, 160, 89, 0.3);
+      }
+
+      /* Gallery Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #121212; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #333, #555); 
+        border-radius: 10px;
+        border: 1px solid #121212;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #C5A059, #8A6E30);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body>
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-content">
-            <div class="loader-spinner"></div>
-            <p>Պատկերասրահը բեռնվում է...</p>
-        </div>
-    </div>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <a href="/" class="logo">
-                <div class="logo-icon">A</div>
-                <span>ARTIKAA</span>
-            </a>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Գլխավոր</a></li>
-                <li><a href="#gallery" class="nav-link">Պատկերասրահ</a></li>
-                <li><a href="#artists" class="nav-link">Նկարիչներ</a></li>
-                <li><a href="#services" class="nav-link">Ծառայություններ</a></li>
-                <li><a href="#contact" class="nav-link">Կապ</a></li>
-            </ul>
-            
-            <div class="nav-right">
-                <div class="language-switcher">
-                    <button class="lang-btn active" data-lang="hy" title="Հայերեն">ՀԱՅ</button>
-                    <button class="lang-btn" data-lang="en" title="English">ENG</button>
-                    <button class="lang-btn" data-lang="ru" title="Русский">РУС</button>
-                </div>
-                
-                <button class="nav-cart" id="navCart" title="Զամբյուղ">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count" id="cartCount">0</span>
-                </button>
-
-                <button class="nav-toggle" id="navToggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Որտեղ Արվեստը<br>Գտնում է Իր Ձայնը</h1>
-            <p class="hero-subtitle">Բացահայտեք ժամանակակից արվեստի եզակի հավաքածուներ</p>
-            <a href="#gallery" class="btn btn-primary">
-                <span>Բացահայտել Պատկերասրահը</span>
-                <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">150+</div>
-                    <div class="stat-label">Արվեստի Գործեր</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">45+</div>
-                    <div class="stat-label">Նկարիչներ</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">2000+</div>
-                    <div class="stat-label">Գոհ Հաճախորդներ</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">4.8★</div>
-                    <div class="stat-label">Գնահատական</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section gallery" id="gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Արվեստի Գործեր</h2>
-                <p class="section-subtitle">Բացահայտեք մեր ժամանակակից կողմերի մեծ հավաքածուն</p>
-            </div>
-
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">Բոլորը</button>
-                <button class="filter-btn" data-filter="painting">Նկարներ</button>
-                <button class="filter-btn" data-filter="sculpture">Քանդակներ</button>
-                <button class="filter-btn" data-filter="photography">Լուսանկարներ</button>
-            </div>
-
-            <div class="gallery-grid" id="galleryGrid">
-                <!-- Products loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <img src="images/about.jpg" alt="About Artikaa Gallery">
-                </div>
-                <div class="about-content">
-                    <h2>Մեր Մասին</h2>
-                    <p>Artikaa-ն ստեղծվել է 2020 թվականին` հայ նկարիչներին համաշխարհային հանրությանը ներկայացնելու նպատակով։ Մենք հավատում ենք, որ արվեստը սահմանազերծ է և յուրաքանչյուր մեկը պետք է հասանելի լինի արվեստի գմբիրների համար:</p>
-                    <p>Մեր հավաքածուն ներառում է ժամանակակից նկարներ, քանդակներ, լուսանկարներ և թվային արվեստ՝ Հայաստանի ամենա talented նկարիչներից:</p>
-                    <a href="#" class="btn btn-secondary">Ավելին իմանալ</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Artists Section -->
-    <section class="section artists" id="artists">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Հայտնի Նկարիչներ</h2>
-                <p class="section-subtitle">Հանդիպեք մեր տաղանդավոր նկարիչներին</p>
-            </div>
-
-            <div class="artists-grid" id="artistsGrid">
-                <!-- Artists loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="section services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Մեր Ծառայություններ</h2>
-                <p class="section-subtitle">Մենք առաջարկում ենք լավագույն ծառայություններ</p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shipping-fast"></i>
-                    </div>
-                    <h3>Արագ Առաքում</h3>
-                    <p>Ապահովել ենք ամբողջ Հայաստանում արագ և վստահելի առաքում</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3>Ապահով Վճարում</h3>
-                    <p>Բոլոր վճարումները փակ հարթակի միջոցով իրականացվում են</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>24/7 Աջակցություն</h3>
-                    <p>Մեր թիմը պատրաստ է օգնել ձեզ 24 ժամ շարունակ</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-undo"></i>
-                    </div>
-                    <h3>Հեռուստադի Վերադարձ</h3>
-                    <p>30 օր վերադարձի գինամատենք բանի կամ փոխանակ</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="section testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Հաճախորդների Մեկնաբանություններ</h2>
-            </div>
-
-            <div class="testimonials-grid" id="testimonialsGrid">
-                <!-- Testimonials loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Մեզ հետ Կապվեք</h2>
-                <p class="section-subtitle">Մենք սիրում ենք լսել ձեր կարծիքը</p>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Հասցե</h4>
-                            <p>Հանրապետության Հրապարակ 25<br>Երևան, Հայաստան</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Հեռախոս</h4>
-                            <p>+374 (10) XXX-XXXX</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Էլ. Հասցե</h4>
-                            <p>info@artikaa.am</p>
-                        </div>
-                    </div>
-                </div>
-
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Ձեր Անունը" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Ձեր Էլ. Հասցե" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Թեմա" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" rows="5" placeholder="Ձեր Հաղորդագրությունը" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Ուղարկել</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="section newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>Բաժանորդ Դառեք Մեր Տեղեկատուին</h2>
-                <p>Ստացեք բացառիկ առաջարկներ և նորանցներ սկսած ձեր հաշվից</p>
-                <form class="newsletter-form" id="newsletterForm">
-                    <input type="email" placeholder="Ձեր Էլ. Հասցե" required>
-                    <button type="submit" class="btn btn-primary">Բաժանորդ</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Մեր Մասին</h3>
-                    <ul>
-                        <li><a href="#">Մեր Պատմությունը</a></li>
-                        <li><a href="#">Մեր Թիմը</a></li>
-                        <li><a href="#">Կարիերա</a></li>
-                        <li><a href="#">Բլոգ</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Ծառայություններ</h3>
-                    <ul>
-                        <li><a href="#">Բիզնես Հաշիվ</a></li>
-                        <li><a href="#">Քարտուղ Ծառայություններ</a></li>
-                        <li><a href="#">Գինը Գնահատում</a></li>
-                        <li><a href="#">Նույնություն</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Իրավական</h3>
-                    <ul>
-                        <li><a href="#">Գաղտնիության Քաղաքականություն</a></li>
-                        <li><a href="#">Ծառայության Պայմաններ</a></li>
-                        <li><a href="#">Cookies</a></li>
-                        <li><a href="#">Մեր Ծառայություններ</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Հետևեք Մեզ</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Artikaa Gallery. Բոլոր իրավունքները պաշտպանված են:</p>
-                <div class="footer-meta">
-                    <a href="#">Վերադար</a>
-                    <a href="#">Կոնֆիդենցիալություն</a>
-                    <a href="#">Մեր Մասին</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Shopping Cart Sidebar -->
-    <aside class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Ձեր Զամբյուղը</h3>
-            <button class="cart-close" id="cartClose">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="cart-body" id="cartBody">
-            <div class="empty-cart">
-                <i class="fas fa-shopping-bag"></i>
-                <p>Ձեր զամբյուղն դատարկ է</p>
-            </div>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-summary">
-                <div class="summary-row">
-                    <span>Ենթամիջոցներ:</span>
-                    <span id="cartSubtotal">0 ֏</span>
-                </div>
-                <div class="summary-row">
-                    <span>Հարկ (10%):</span>
-                    <span id="cartTax">0 ֏</span>
-                </div>
-                <div class="summary-row total">
-                    <span>Ընդամենը:</span>
-                    <span id="cartTotal">0 ֏</span>
-                </div>
-            </div>
-            <button class="btn btn-primary btn-block" id="checkoutBtn">Հաստատել</button>
-        </div>
-    </aside>
-
-    <!-- Overlay -->
-    <div class="overlay" id="overlay"></div>
-
-    <!-- Notifications Container -->
-    <div class="notifications-container" id="notificationsContainer"></div>
-
-    <!-- JavaScript -->
-    <script src="ASSETS/js/main.js"></script>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
 </body>
 </html>
